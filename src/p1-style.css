@@ -1,0 +1,111 @@
+/* P1 interaction, accessibility, responsive, and print refinements. */
+:root { --focus:#073b9b; --focus-soft:#dceaff; }
+.gov { background:var(--gov); }
+.ngo { background:var(--ngo); }
+.private { background:var(--private); }
+.helpline { background:#167d8a; }
+.majha { background:var(--majha); }
+.doaba { background:var(--doaba); }
+.malwa { background:var(--malwa); }
+.puadh { background:var(--puadh); }
+.region-label-row { margin-top:6px; }
+.district-count-dot { background:#176447; }
+.legend-explanation { font-size:.72rem; line-height:1.35; }
+.legend-river-row { margin-top:6px; border-top:1px solid #e3ece7; padding-top:6px; }
+.river-swatch { width:13px; height:0; border-top:2px solid #4a9fcb; }
+
+.skip-link {
+  position:absolute; z-index:20; left:12px; top:-60px; padding:10px 14px; border-radius:8px;
+  background:#fff; color:#173c2d; font-weight:800; box-shadow:0 3px 14px rgba(0,0,0,.2);
+}
+.skip-link:focus { top:12px; }
+.visually-hidden { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+.app-status { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex="-1"]:focus-visible {
+  outline:3px solid var(--focus) !important; outline-offset:3px; box-shadow:0 0 0 5px var(--focus-soft) !important;
+}
+#directory-results, #selectionHeading { scroll-margin-block:18px; }
+
+#main-content { min-width:0; }
+.map-panel { min-width:0; padding:22px; }
+.view-controls { display:none; gap:7px; margin:0 0 14px; }
+.view-controls button { min-height:44px; min-width:74px; padding:9px 13px; border:1px solid #c7d8cd; border-radius:8px; background:#fff; color:#245d40; font-weight:800; }
+.view-controls button[aria-pressed="true"] { background:#176447; color:#fff; border-color:#176447; }
+
+.map-layer-details { margin-top:18px; border-top:1px solid #dce8e1; padding-top:11px; }
+.map-layer-details summary { min-height:44px; display:flex; align-items:center; cursor:pointer; color:#285d46; font-size:.84rem; font-weight:800; }
+.map-layer-details[open] summary { margin-bottom:8px; }
+.map-layer-details .control-card { margin-top:0; }
+.control-row { min-height:44px; align-items:center; }
+.control-row > span { flex:1; }
+.switch { min-width:48px; min-height:44px; display:inline-flex; align-items:center; justify-content:flex-end; }
+.region-check { min-height:40px; display:inline-flex; align-items:center; gap:7px; padding:3px 0; }
+
+.result-head { align-items:center; gap:9px; }
+.result-head .section-label { margin:0; }
+.result-actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:6px; }
+.small-action, .map-export button, .selection-actions .small-action {
+  min-height:36px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none;
+}
+.filter-chips { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 10px; }
+.filter-chip { min-height:34px; padding:5px 9px; border:1px solid #b8d3c1; border-radius:999px; background:#edf7f0; color:#245d40; font-size:.74rem; font-weight:700; }
+
+.facility { padding:0; overflow:hidden; }
+.facility-open { width:100%; border:0; background:transparent; color:inherit; text-align:left; padding:12px; font:inherit; cursor:pointer; }
+.facility-open:hover { background:#f6fbf7; }
+.facility.is-selected .facility-open { background:#f6fbf7; }
+.p1-card-line, .p1-card-caveat { margin:7px 0 0 28px; font-size:.75rem; line-height:1.4; color:#53675d; }
+.p1-card-caveat { padding:6px 8px; margin-left:0; border-radius:6px; background:#f3f7f4; }
+.p1-card-action { display:block; margin-top:9px; color:#216144; font-size:.78rem; font-weight:800; }
+
+.selection-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px; }
+.p1-report-note { flex:1 1 160px; margin:0 !important; color:#5a6d62; font-size:.73rem !important; line-height:1.4; }
+.close-selection { min-width:44px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+
+.district-summary-group { cursor:pointer; }
+.district-summary-marker { pointer-events:all; }
+.map-actions button { width:44px !important; height:44px !important; }
+.map-export button { min-height:38px; padding:7px 10px !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
+}
+
+@media (max-width: 720px) {
+  .workspace { display:block !important; }
+  aside { order:initial !important; max-height:none; border-right:0; border-bottom:1px solid var(--line); }
+  .map-panel { padding:14px; min-height:0 !important; }
+  .view-controls { display:flex; }
+  .app[data-view="list"] .map-panel { display:none; }
+  .app[data-view="map"] aside > :not(.view-controls):not(.visually-hidden) { display:none; }
+  .app[data-view="map"] aside { padding-bottom:10px; }
+  .map-shell, #map { min-height:420px !important; }
+  .map-topline { align-items:flex-start; }
+  .result-head { align-items:flex-start; flex-direction:column; }
+  .result-actions { justify-content:flex-start; }
+  .small-action, .coverage-button, .filter-button, .type-select { min-height:44px; }
+  .coverage-button { font-size:.8rem; }
+}
+
+.print-context { display:none; }
+
+@media print {
+  @page { margin:14mm; }
+  html, body { background:#fff !important; color:#111 !important; font-size:10.5pt; }
+  .skip-link, .view-controls, .search-wrap, .category-grid, #coverageControls, .map-layer-details, .filter-chips, .active-context, .map-panel, .map-export, .map-actions, .selection-actions, .close-selection, .header-stat { display:none !important; }
+  header { background:#fff !important; color:#111 !important; border-bottom:2px solid #1e533b; padding:0 0 8px !important; }
+  header p { color:#333 !important; }
+  .workspace { display:block !important; }
+  aside { padding:0 !important; overflow:visible !important; border:0 !important; }
+  #directory-results { display:block !important; }
+  .result-head { display:block !important; margin:14px 0 8px; }
+  .result-actions { display:none !important; }
+  .print-context { display:block !important; border:1px solid #777; margin:0 0 10px; padding:8px; font-size:9.5pt; line-height:1.4; }
+  #selection { display:none !important; }
+  .facility-list { overflow:visible !important; }
+  .facility { break-inside:avoid; border:1px solid #999 !important; box-shadow:none !important; margin:0 0 8px; }
+  .facility-open { padding:9px !important; }
+  .p1-card-caveat, .p0-uncertainty { border:1px solid #aaa; background:#fff !important; }
+  .pill { border:1px solid #777; background:#fff !important; color:#111 !important; }
+}

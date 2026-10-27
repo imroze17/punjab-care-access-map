@@ -1,0 +1,5 @@
+{
+  "schemaVersion": "pca-access-evidence/v1",
+  "entries": [],
+  "notice": "No verified access fields are published in P1/P2 scaffolding. A non-null value requires dated, field-specific approved evidence."
+}

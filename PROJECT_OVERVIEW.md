@@ -1,6 +1,6 @@
 # Punjab Care Access Map — Project Overview
 
-> **Current release:** P0 foundation
+> **Current release:** P0 foundation with P1 usability/maintainability and P2 fail-closed governance scaffold
 > **Dataset version:** `pca-2026-10-27-v1`
 > **Product type:** static, source-derived directory and geographic orientation tool
 > **Not a verified provider registry, clinical service finder, or facility locator**
@@ -173,16 +173,18 @@ data/
   facilities.updated.json         # historical importer reconciliation baseline
 
 src/
-  template.html                   # committed static template with placeholders
-  p0-runtime.js                   # district-summary renderer, filters, exports
-  p0-style.css                    # P0 notice, controls, summary marker styles
+  template.html                   # locale-tokenized semantic static shell
+  base-runtime.js                 # geometry and base application bootstrap
+  p0-helpers.js                   # active coordinate-safe map helper set
+  p1-runtime.js                   # list-first controls, URL state, print/export, accessibility
+  base-style.css / p0-style.css / p1-style.css  # assembled same-origin CSS
   logo.svg
 
 scripts/
   import_legacy_source.py         # controlled provenance-safe importer
-  build_p0.py                     # canonical -> runtime/public build
+  build_p0.py                     # canonical + approved locale -> modular runtime/public build
   sync_github_pages.py            # public -> docs full sync
-  validate_p0.py                  # deterministic build/data checks
+  validate_p0.py                  # deterministic data, safety, locale, Pages, workflow checks
   create_p0_template.py           # retained one-time template migration utility
   prepare_updated_facilities.R    # retired historical intermediate generator
   restore_reference_design.py     # retired historical design helper
@@ -228,14 +230,14 @@ The refresh path validates the six-field contract, uses the committed legacy rec
 5. Manifest/canonical agreement, lineage fields, explicit null coordinates, and source-text derivations;
 6. Complete crosswalk and review-report shape;
 7. No coordinate-bearing runtime record; 108 district-summary records, four coverage controls, 22 district groups, and two coverage scopes;
-8. Equality between generated runtime JSON and records embedded in `public/index.html`;
-9. Absence of the legacy coordinate renderer and facility-marker wording;
+8. Equality between generated runtime JSON and the same-origin `public/runtime-data.js` payload;
+9. Absence of coordinate-bearing records, direct contact actions, HTML interpolation paths, persistent browser storage, and geographic wording that implies facility pins;
 10. `public/`/`docs/` parity except for the intentional GitHub Pages-relative favicon path;
-11. `.nojekyll`, logo parity, route manifest, and inline JavaScript syntax.
+11. `.nojekyll`, logo parity, route manifest, restrictive no-inline CSP, external CSS/JavaScript/runtime-data assets, and JavaScript syntax.
 
 ## 12. Hosting
 
-`public/` is the Manus static build output. `docs/` is synchronized from it for GitHub Pages, with a relative favicon path and `.nojekyll` for project-subpath compatibility. A repository URL is not itself a public map URL; before sharing a live link, configure/verify the GitHub Pages environment and visit the deployed site.
+`public/` is the Manus static build output. `docs/` is synchronized from it for GitHub Pages, with a relative favicon path and `.nojekyll` for project-subpath compatibility. The repository also contains an immutable-action GitHub Pages workflow that validates static output and packages/deploys a Pages artifact only after the owner selects GitHub Actions as the publishing source. A repository URL is not itself a public map URL; before sharing a live link, configure/verify the GitHub Pages environment and visit the deployed site.
 
 ## 13. Explicit limitations and decisions still required
 
@@ -246,7 +248,16 @@ Owner/editorial work still needed includes:
 - Resolve duplicate-review candidates with reviewer, date, decision, and rationale;
 - Review same-location/different-source-label cases;
 - Establish an approved verification, correction, archival, privacy, and public-display policy;
-- Complete P1 accessibility, contact-action, CI/CD, deployment monitoring, and usability work from the developer handoff;
-- Complete P2 reviewed localization, richer source-backed taxonomy, and any future verified-geocode governance.
+- Complete the outstanding human P1 accessibility review, browser/touch/print review, and production deployment review described in `TEST_REPORT.md`;
+- Supply and approve a correction route/canonical public URL before either appears in the public runtime;
+- Complete P2 reviewed localization, richer source-backed taxonomy, field-specific access evidence, and any future verified-geocode governance.
 
 Until those decisions are complete, describe the map as a **source-derived directory and geographic orientation aid**, not as a verified care-access system.
+
+## 14. P1/P2 implementation status
+
+P1 now makes the directory list-first and usable without the map. It adds a native district selector, source-role/source-term filters, active chips, URL/back-forward state, visible focus, a skip link, a polite status region, responsive List/Map controls, print styling, source-contact/context caveats, CSV formula-prefix protection, and tested PNG/PDF export. The public application is modularized into same-origin `app.css`, `runtime-data.js`, and `app.js` assets under a restrictive static CSP.
+
+P2 is implemented as a fail-closed governance scaffold. English is the only public locale. The reviewed locale overlay and access-evidence registries are empty, and build validation rejects an attempted public release of unsupported translations, access claims, correction routes, or canonical URLs. See `LOCALE_AND_EVIDENCE_GOVERNANCE.md` for the required evidence and approval path.
+
+For release, privacy/security, and human-review details, use `RELEASE_RUNBOOK.md`, `PRIVACY_AND_SECURITY.md`, `ACCESSIBILITY_NOTES.md`, `TEST_REPORT.md`, `QUALITY_REPORT.md`, and `MAINTAINER_CHECKLIST.md`.

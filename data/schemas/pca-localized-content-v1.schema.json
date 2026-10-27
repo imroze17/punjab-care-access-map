@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Punjab Care Access reviewed localized content v1",
+  "type": "object",
+  "required": ["schemaVersion", "locale", "publicationStatus", "review", "interface", "recordFieldOverlays"],
+  "properties": {
+    "schemaVersion": {"const": "pca-localized-content/v1"},
+    "locale": {"type": "string", "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]+)?$"},
+    "publicationStatus": {"enum": ["draft", "approved_for_publication"]},
+    "review": {
+      "type": "object",
+      "required": ["reviewerReference", "reviewDate"],
+      "properties": {"reviewerReference": {"type": "string", "minLength": 1}, "reviewDate": {"type": "string", "format": "date"}}
+    },
+    "interface": {"type": "object", "additionalProperties": {"type": "string"}},
+    "recordFieldOverlays": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["recordId", "sourceField", "text", "reviewerReference", "reviewDate"],
+        "properties": {
+          "recordId": {"type": "string", "minLength": 1},
+          "sourceField": {"enum": ["name", "district", "address", "type", "remarks"]},
+          "text": {"type": "string", "minLength": 1},
+          "reviewerReference": {"type": "string", "minLength": 1},
+          "reviewDate": {"type": "string", "format": "date"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "pca-district-aliases/v1",
+  "notice": "Aliases are limited to established administrative/historical labels already used in the supplied-source normalization. They improve directory discovery only and do not establish service availability.",
+  "districts": [
+    {"name": "Amritsar", "aliases": []},
+    {"name": "Barnala", "aliases": []},
+    {"name": "Bathinda", "aliases": []},
+    {"name": "Faridkot", "aliases": []},
+    {"name": "Fatehgarh Sahib", "aliases": []},
+    {"name": "Fazilka", "aliases": []},
+    {"name": "Ferozepur", "aliases": ["Ferozpur"]},
+    {"name": "Gurdaspur", "aliases": []},
+    {"name": "Hoshiarpur", "aliases": []},
+    {"name": "Jalandhar", "aliases": []},
+    {"name": "Kapurthala", "aliases": []},
+    {"name": "Ludhiana", "aliases": []},
+    {"name": "Malerkotla", "aliases": []},
+    {"name": "Mansa", "aliases": []},
+    {"name": "Moga", "aliases": []},
+    {"name": "Pathankot", "aliases": []},
+    {"name": "Patiala", "aliases": []},
+    {"name": "Rupnagar", "aliases": ["Ropar", "Rup Nagar"]},
+    {"name": "Sahibzada Ajit Singh Nagar", "aliases": ["Mohali", "SAS Nagar", "S.A.S. Nagar", "Derabassi"]},
+    {"name": "Sangrur", "aliases": []},
+    {"name": "Shaheed Bhagat Singh Nagar", "aliases": ["Nawanshahr", "SBS Nagar", "S.B.S. Nagar"]},
+    {"name": "Sri Muktsar Sahib", "aliases": ["Muktsar"]},
+    {"name": "Tarn Taran", "aliases": []}
+  ]
+}

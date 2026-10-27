@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "pca-public-site-config/v1",
+  "canonicalPublicUrl": null,
+  "correctionRoute": null,
+  "publishedLocales": ["en"],
+  "approvedOutboundOrigins": ["https://bharatlas.com"],
+  "notice": "No correction destination or canonical public URL has been approved. The public interface must not invent either value. Source-supplied contact text remains unverified and is not converted into an action destination by this configuration."
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Punjab Care Access field-specific access evidence v1",
+  "type": "object",
+  "required": ["schemaVersion", "entries"],
+  "properties": {
+    "schemaVersion": {"const": "pca-access-evidence/v1"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["recordId", "field", "value", "evidenceId", "evidenceDate", "publicationStatus"],
+        "properties": {
+          "recordId": {"type": "string", "minLength": 1},
+          "field": {"enum": ["openingHours", "fees", "referralRequirements", "eligibility", "languages", "physicalAccessibility", "operationalStatus", "website", "email", "telephone"]},
+          "value": {},
+          "evidenceId": {"type": "string", "minLength": 1},
+          "evidenceDate": {"type": "string", "format": "date"},
+          "publicationStatus": {"const": "approved_for_publication"}
+        }
+      }
+    }
+  }
+}

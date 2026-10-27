@@ -71,3 +71,56 @@ docs/                            # generated GitHub Pages copy
 ## Verification evidence
 
 The release must demonstrate: 112 source observations with one legacy ID each; no output `lat`/`lon` fields; all map counts reconcile as 108 records in 22 district groups plus 4 records in two coverage scopes; public and Pages builds agree except for the intentional relative favicon path; the static page parses; and live filters/export controls operate after regeneration.
+
+---
+
+# P1/P2 Implementation Plan — Usability, Release Engineering, and Safe Enrichment
+
+## Scope and evidence boundary
+
+Implement the P1 static-site improvements that do not require fabricated directory facts: list-first navigation, native district browsing, source-term/role filtering, URL state, keyboard/mobile remediation, print/export context, safe public contact handling, static build/CI/release documentation, privacy/security documentation, and static output hardening. Preserve every P0 provenance and map-uncertainty constraint.
+
+P2 will deliver a **fail-closed scaffold**, not unreviewed health content. The project will externalize interface strings, create a locale registry with English as the only published locale, reserve a reviewed translation overlay, and add a null-by-default access-evidence model. It will not publish Panjabi/Gurmukhi strings, verified operating status, hours, fees, eligibility, accessibility, or new contact claims without an owner-approved qualified reviewer and field-specific dated evidence.
+
+## Design and interaction approach
+
+Retain the existing white-and-green interface, but make the directory the primary route: **District → source role/source term → search → result card → details/contact context**. On narrow viewports, the list is the default visual view and an explicit List/Map control exposes the map as an optional orientation panel. The native district selector is the complete non-map browse path; the SVG retains pointer enhancement but is treated as a visual overview, not a required keyboard widget.
+
+All applied filters are reflected in removable chips, a restrained result-status message, validated shareable URL parameters, and browser back/forward state. Ordinary filtering preserves focus. A selected record remains open only while it matches the active result set; otherwise the selection is closed and the status explains why. The map, print view, CSV, PNG, and PDF will all carry the same source-derived and location-uncertainty interpretation.
+
+## Implementation approach
+
+1. **Modular static output and CSP.** Split generated CSS, application JavaScript, and runtime data into same-origin static assets; keep `public/index.html` as semantic shell and configure a restrictive meta CSP compatible with GitHub Pages. Validate that generated HTML has no inline script/style, no third-party executable resources, and no prohibited legacy term.
+2. **Primary journey and state.** Introduce a native district select (including zero-listing Punjab districts), source-record-role and source-term filters, search normalization/token matching/district aliases, active filter chips, an explicit clear-directory-filters action, no-results context, and validated URL state for search, district, role, source term, ownership, coverage, view, and entry ID.
+3. **Accessible list-first map.** Add a skip link, coherent main/results landmarks, dedicated polite status region, visible focus, target sizing, reduced-motion handling, focus restoration, native List/Map view controls, and print layout. Remove SVG keyboard-button semantics in favour of the equivalent native district control.
+4. **Record actions and exports.** Keep all source contacts labelled as supplied/unconfirmed. Add safe card/detail ordering, share/copy link, listing-print action, neutral correction-route status when no approved destination exists, accessible export feedback, and export metadata/caveats without inventing canonical URLs or verification dates.
+5. **P2 fail-closed content model.** Add an English message dictionary and a locale registry that exposes only complete approved packs; add a separate schema/data overlay for reviewed translations and field-specific access evidence; make validators reject incomplete/unapproved translations or non-null access claims without dated supporting evidence.
+6. **Static CI, release, privacy, and test records.** Add GitHub Actions verification/Pages-artifact workflow, a public-safe quality report, release/rollback instructions, privacy/security inventory, maintainer checklist, and a test report template that distinguishes executed automated checks from required human review. Do not modify repository Pages settings or claim production deployment before owner action.
+
+## P1/P2 project structure additions
+
+```text
+data/
+  config/district-aliases.v1.json
+  config/public-site-config.v1.json       # no correction destination/canonical URL until approved
+  locales/en.v1.json                      # reviewed English interface strings
+  schemas/pca-localized-content-v1.schema.json
+  schemas/pca-access-evidence-v1.schema.json
+  reviewed/                                # empty, fail-closed translation/access overlays
+src/
+  app.css, app.js, runtime-data.js         # generated same-origin assets
+  locale.js, p1-runtime.js                 # source modules used by the builder
+.github/workflows/site.yml                 # verify and deploy only when Pages Actions is owner-enabled
+RELEASE_RUNBOOK.md
+TEST_REPORT.md
+PRIVACY_AND_SECURITY.md
+MAINTAINER_CHECKLIST.md
+```
+
+## Material constraints
+
+- Do not add accounts, tracking, local/session storage for navigation state, geolocation, external map tiles, web fonts, a backend, clinical advice, or a public health-data collection form.
+- Do not publish unreviewed Panjabi/Gurmukhi translation, reviewed service taxonomy labels, verified contact/action claims, approved correction endpoint, canonical public URL, or access facts that the owner has not supplied.
+- Do not represent GitHub Actions code as an activated deployment setting. The owner must select the Pages source and review the production environment.
+- Do not call raster map PDF an accessible directory. The semantic print view is the directory alternative.
+- Remove every occurrence of the prohibited legacy term from project materials and generated output.

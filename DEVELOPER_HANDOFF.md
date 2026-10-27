@@ -4,7 +4,7 @@ Version: 1.0
 Prepared: 27 October 2026
 Project owner: Imroze Singh
 Repository: https://github.com/imroze17/punjab-care-access-map
-Public website: https://imroze17.github.io/punjab-care-access-map/
+Intended GitHub Pages address, not verified as live: https://imroze17.github.io/punjab-care-access-map/
 Status: Proposed implementation specification derived from the project overview and repository audit. This document authorizes no clinical claims, service endorsements, data verification claims, or automatic record deletion.
 
 ---
@@ -1238,3 +1238,22 @@ At implementation time, `make check` passed. It rebuilt `public/` and `docs/`, r
 ### Still open
 
 P1 and P2 work remains open. In particular: editorial duplicate decisions, external verification, formal privacy/public-display policy, accessibility audit/remediation, automated CI/CD deployment, monitoring, and any future verified-geocode governance have not been represented as completed by P0.
+
+
+---
+
+## Implementation Status — P1/P2 Safe Static Release (2026-10-27)
+
+### Implemented P1 work
+
+The static application now uses a list-first native district journey, source-role and source-term filters, normalized search, active filter chips, URL/back-forward state, no-results/status handling, responsive List/Map controls, visible focus, a skip link, a polite status region, print styling, source-contact caveats, and source-derived CSV/PNG/PDF exports. The SVG remains a visual overview with a native district alternative; district count symbols do not represent facility coordinates.
+
+Generated output now uses same-origin external CSS, JavaScript, and runtime-data files behind a restrictive static CSP. The project includes owner-gated GitHub Pages Actions configuration, immutable official action references, privacy/security notes, a release/rollback runbook, accessibility notes, a maintainer checklist, a quality report, and a test report. The workflow is committed but does not change repository Pages settings; the owner must select GitHub Actions as the Pages source before deployment can occur.
+
+### Implemented P2 safe scaffold
+
+English is the only approved publishable interface locale. The locale overlay and access-evidence registries are intentionally empty. Schemas, builder checks, and validator gates reject unsupported public translation/access content. No verified access facts, Panjabi/Gurmukhi strings, correction destination, canonical URL, operational status, or new contact/clinical claim was added.
+
+### Still requiring owner or qualified-reviewer action
+
+A production Pages activation/review, canonical public URL, correction route, complete reviewed Panjabi locale, field-specific dated access evidence, verified service/contact claims, and human accessibility review remain intentionally open. This implementation does not represent those items as complete.

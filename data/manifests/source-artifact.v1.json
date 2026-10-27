@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "pca-source-artifact/v1",
+  "datasetVersion": "pca-2026-10-27-v1",
+  "sourceArtifact": {
+    "sourceArtifactId": "source:deepseek_csv_20261027_e08391",
+    "fileName": "deepseek_csv_20261027_e08391.txt",
+    "sha256": "41962223c49fac19932e9f141548a4e2fa7d1c2dd1a3d48312382efdf70fe24e",
+    "expectedHeader": [
+      "Name",
+      "District",
+      "Address / Location",
+      "Type",
+      "Contact (if available)",
+      "Remarks"
+    ],
+    "parserVersion": "pca-legacy-import/v2",
+    "sourceRecordCount": 112,
+    "rawContentCommitted": false,
+    "notice": "The controlled raw upload is intentionally not committed. This manifest retains hash-based provenance for the approved import."
+  }
+}

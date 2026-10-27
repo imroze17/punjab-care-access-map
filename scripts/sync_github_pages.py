@@ -1,16 +1,30 @@
 #!/usr/bin/env python3
-"""Prepare a GitHub Pages branch-publishing folder from the public static map."""
-from pathlib import Path
+"""Synchronize the generated static site into the GitHub Pages docs/ folder."""
+from __future__ import annotations
+
+import argparse
 import shutil
+from pathlib import Path
 
-source = Path("public")
-target = Path("docs")
-target.mkdir(exist_ok=True)
 
-html = (source / "index.html").read_text(encoding="utf-8")
-# GitHub Pages project sites use a repository subpath, so a root-relative favicon path would not resolve.
-html = html.replace('href="/logo.svg"', 'href="logo.svg"')
-(target / "index.html").write_text(html, encoding="utf-8")
-shutil.copy2(source / "logo.svg", target / "logo.svg")
-(target / ".nojekyll").write_text("", encoding="utf-8")
-print("GitHub Pages source prepared in docs/")
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", default=Path("public"), type=Path)
+    parser.add_argument("--target", default=Path("docs"), type=Path)
+    args = parser.parse_args()
+    if not (args.source / "index.html").is_file():
+        raise FileNotFoundError(f"source static output missing {args.source / 'index.html'}")
+    if args.target.exists():
+        shutil.rmtree(args.target)
+    shutil.copytree(args.source, args.target)
+    index = args.target / "index.html"
+    text = index.read_text(encoding="utf-8")
+    if 'href="/logo.svg"' not in text:
+        raise RuntimeError("expected root-relative logo reference in public output")
+    index.write_text(text.replace('href="/logo.svg"', 'href="logo.svg"', 1), encoding="utf-8")
+    (args.target / ".nojekyll").write_text("", encoding="utf-8")
+    print(f"Synced {args.source} to {args.target} with a GitHub Pages-relative favicon")
+
+
+if __name__ == "__main__":
+    main()

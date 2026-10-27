@@ -1,0 +1,785 @@
+{
+  "reportVersion": "duplicate-candidates/v1",
+  "sourceArtifactId": "source:deepseek_csv_20261027_e08391",
+  "sourceArtifactSha256": "41962223c49fac19932e9f141548a4e2fa7d1c2dd1a3d48312382efdf70fe24e",
+  "normalizationRuleVersion": "duplicate-normalization/v1",
+  "candidates": [
+    {
+      "candidateId": "pca:duplicate:c6d6f369fac6a796",
+      "candidateType": "possible_duplicate",
+      "confidenceBand": "high",
+      "reason": "same normalized name, district, address, and type",
+      "left": {
+        "recordId": "pca:record:da98d66e-5ce4-5b07-b66c-9e23256b504d",
+        "legacyIds": [
+          "F026"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000021",
+        "sourceRowNumber": 21
+      },
+      "right": {
+        "recordId": "pca:record:fe35f0a3-8918-5d34-8248-a694d28ca219",
+        "legacyIds": [
+          "F028"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000025",
+        "sourceRowNumber": 25
+      },
+      "comparison": {
+        "name": {
+          "left": "Drug De-Addiction Centre, Civil Hospital",
+          "right": "Drug De-addiction Centre, Civil Hospital",
+          "sameNormalized": true
+        },
+        "district": {
+          "left": "Sangrur",
+          "right": "Sangrur",
+          "sameNormalized": true
+        },
+        "address": {
+          "left": "Civil Hospital, Sangrur",
+          "right": "Civil Hospital, Sangrur",
+          "sameNormalized": true,
+          "tokenOverlap": 1.0
+        },
+        "type": {
+          "left": "Government (DDTC)",
+          "right": "Government (DDTC)",
+          "sameNormalized": true
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewDate": null,
+        "rationale": null
+      }
+    },
+    {
+      "candidateId": "pca:duplicate:9096e3082d493d2b",
+      "candidateType": "needs_manual_review",
+      "confidenceBand": "medium",
+      "reason": "same normalized name and type with overlapping address/locality text",
+      "left": {
+        "recordId": "pca:record:430aade9-e456-55a3-a37b-b74fc890fa80",
+        "legacyIds": [
+          "F033"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000041",
+        "sourceRowNumber": 41
+      },
+      "right": {
+        "recordId": "pca:record:d6420418-3706-5de7-8697-c1f065e97ab5",
+        "legacyIds": [
+          "F039"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000042",
+        "sourceRowNumber": 42
+      },
+      "comparison": {
+        "name": {
+          "left": "Guru Kirpa Foundation DD&RC",
+          "right": "Guru Kirpa Foundation DD&RC",
+          "sameNormalized": true
+        },
+        "district": {
+          "left": "Ludhiana",
+          "right": "Ropar/Ludhiana",
+          "sameNormalized": false
+        },
+        "address": {
+          "left": "Rara Sahib / Ludhiana",
+          "right": "Rara Sahib",
+          "sameNormalized": false,
+          "tokenOverlap": 1.0
+        },
+        "type": {
+          "left": "NGO / Private",
+          "right": "NGO / Private",
+          "sameNormalized": true
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewDate": null,
+        "rationale": null
+      }
+    },
+    {
+      "candidateId": "pca:duplicate:999a6dd3ce9cd78f",
+      "candidateType": "needs_manual_review",
+      "confidenceBand": "medium",
+      "reason": "same normalized name and type with overlapping address/locality text",
+      "left": {
+        "recordId": "pca:record:00799054-82f8-5dd3-b6da-bf93748c339b",
+        "legacyIds": [
+          "F045"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000046",
+        "sourceRowNumber": 46
+      },
+      "right": {
+        "recordId": "pca:record:8ea74d94-c5b6-5e59-a840-27be4bfc6a1e",
+        "legacyIds": [
+          "F047"
+        ],
+        "observationId": "pca:observation:source:deepseek_csv_20261027_e08391:r000048",
+        "sourceRowNumber": 48
+      },
+      "comparison": {
+        "name": {
+          "left": "Red Cross Integrated Rehabilitation Centre",
+          "right": "Red Cross Integrated Rehabilitation Centre",
+          "sameNormalized": true
+        },
+        "district": {
+          "left": "Khanpur (Patiala)",
+          "right": "Patiala",
+          "sameNormalized": false
+        },
+        "address": {
+          "left": "Khanpur, Patiala",
+          "right": "Patiala",
+          "sameNormalized": false,
+          "tokenOverlap": 1.0
+        },
+        "type": {
+          "left": "NGO (Red Cross)",
+          "right": "NGO (Red Cross)",
+          "sameNormalized": true
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewDate": null,
+        "rationale": null
+      }
+    }
+  ],
+  "sameLocationDifferentSourceLabels": [
+    {
+      "left": {
+        "recordId": "pca:record:b61f3c63-3564-5711-8fdf-da155f7d1e87",
+        "legacyIds": [
+          "F097"
+        ],
+        "sourceRowNumber": 20,
+        "name": "District De-addiction and Rehabilitation Society",
+        "type": "Government Society"
+      },
+      "right": {
+        "recordId": "pca:record:8c0732e3-4d1d-570d-ba29-fbd250dc24b2",
+        "legacyIds": [
+          "F095"
+        ],
+        "sourceRowNumber": 22,
+        "name": "Drug De-Addiction Centre, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "displayAnchorArea": "Bathinda",
+      "sourceAddress": "Civil Hospital, Bathinda",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:b61f3c63-3564-5711-8fdf-da155f7d1e87",
+        "legacyIds": [
+          "F097"
+        ],
+        "sourceRowNumber": 20,
+        "name": "District De-addiction and Rehabilitation Society",
+        "type": "Government Society"
+      },
+      "right": {
+        "recordId": "pca:record:623c329b-f43c-5c7e-95be-59646a57b162",
+        "legacyIds": [
+          "F096"
+        ],
+        "sourceRowNumber": 94,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Bathinda",
+      "sourceAddress": "Civil Hospital, Bathinda",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:da98d66e-5ce4-5b07-b66c-9e23256b504d",
+        "legacyIds": [
+          "F026"
+        ],
+        "sourceRowNumber": 21,
+        "name": "Drug De-Addiction Centre, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:ddc2b351-4e4c-586f-ac6e-d434d03acc66",
+        "legacyIds": [
+          "F030"
+        ],
+        "sourceRowNumber": 83,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Sangrur",
+      "sourceAddress": "Civil Hospital, Sangrur",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:8c0732e3-4d1d-570d-ba29-fbd250dc24b2",
+        "legacyIds": [
+          "F095"
+        ],
+        "sourceRowNumber": 22,
+        "name": "Drug De-Addiction Centre, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:623c329b-f43c-5c7e-95be-59646a57b162",
+        "legacyIds": [
+          "F096"
+        ],
+        "sourceRowNumber": 94,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Bathinda",
+      "sourceAddress": "Civil Hospital, Bathinda",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:cf69ddef-af29-5439-9801-31afc51e098a",
+        "legacyIds": [
+          "F060"
+        ],
+        "sourceRowNumber": 23,
+        "name": "Drug De-addiction Centre, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:c68990c1-aba2-57f0-bc02-883d8024fbd9",
+        "legacyIds": [
+          "F057"
+        ],
+        "sourceRowNumber": 95,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Faridkot",
+      "sourceAddress": "Civil Hospital, Faridkot",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:8e3e2fac-20e4-58f3-9422-eed9e1e082cf",
+        "legacyIds": [
+          "F059"
+        ],
+        "sourceRowNumber": 24,
+        "name": "De-addiction Centre, Medical College",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:811407de-3824-587d-a2ac-c48a271feb62",
+        "legacyIds": [
+          "F062"
+        ],
+        "sourceRowNumber": 37,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "displayAnchorArea": "Faridkot",
+      "sourceAddress": "Government Medical College, Faridkot",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:8e3e2fac-20e4-58f3-9422-eed9e1e082cf",
+        "legacyIds": [
+          "F059"
+        ],
+        "sourceRowNumber": 24,
+        "name": "De-addiction Centre, Medical College",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:da9edf16-7694-5321-9812-c5418e374dad",
+        "legacyIds": [
+          "F061"
+        ],
+        "sourceRowNumber": 102,
+        "name": "Methadone Clinic (MMT),Government Medical College",
+        "type": "Government (MMT)"
+      },
+      "displayAnchorArea": "Faridkot",
+      "sourceAddress": "Government Medical College, Faridkot",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:fe35f0a3-8918-5d34-8248-a694d28ca219",
+        "legacyIds": [
+          "F028"
+        ],
+        "sourceRowNumber": 25,
+        "name": "Drug De-addiction Centre, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:ddc2b351-4e4c-586f-ac6e-d434d03acc66",
+        "legacyIds": [
+          "F030"
+        ],
+        "sourceRowNumber": 83,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Sangrur",
+      "sourceAddress": "Civil Hospital, Sangrur",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:b093a944-632d-50f6-b8bb-a81b6fb58065",
+        "legacyIds": [
+          "F051"
+        ],
+        "sourceRowNumber": 26,
+        "name": "De-addiction Centre, Dept. of Psychiatry",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:8ea74d94-c5b6-5e59-a840-27be4bfc6a1e",
+        "legacyIds": [
+          "F047"
+        ],
+        "sourceRowNumber": 48,
+        "name": "Red Cross Integrated Rehabilitation Centre",
+        "type": "NGO (Red Cross)"
+      },
+      "displayAnchorArea": "Patiala",
+      "sourceAddress": "Patiala",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:b093a944-632d-50f6-b8bb-a81b6fb58065",
+        "legacyIds": [
+          "F051"
+        ],
+        "sourceRowNumber": 26,
+        "name": "De-addiction Centre, Dept. of Psychiatry",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:0473980c-2889-5594-84b1-17ba93e49f38",
+        "legacyIds": [
+          "F053"
+        ],
+        "sourceRowNumber": 71,
+        "name": "Lifeline Foundation",
+        "type": "Private / NGO"
+      },
+      "displayAnchorArea": "Patiala",
+      "sourceAddress": "Patiala",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:c7289c2c-ae48-5b14-aa25-09be73cc100e",
+        "legacyIds": [
+          "F083"
+        ],
+        "sourceRowNumber": 29,
+        "name": "DDTC, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:d6575126-f7db-5735-b26f-d4c5286139b0",
+        "legacyIds": [
+          "F085"
+        ],
+        "sourceRowNumber": 85,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Gurdaspur",
+      "sourceAddress": "Civil Hospital, Gurdaspur",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:e9b72c45-d3c2-5ef1-96a3-2c495a6d12c7",
+        "legacyIds": [
+          "F022"
+        ],
+        "sourceRowNumber": 31,
+        "name": "DDTC, Civil Hospital",
+        "type": "Government (DDTC)"
+      },
+      "right": {
+        "recordId": "pca:record:edc6ccf6-5318-59f3-aa5e-2972153b4581",
+        "legacyIds": [
+          "F024"
+        ],
+        "sourceRowNumber": 76,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Moga",
+      "sourceAddress": "Civil Hospital, Moga",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:f8366a81-556c-5e0a-a5ce-6f335f54fed6",
+        "legacyIds": [
+          "F072"
+        ],
+        "sourceRowNumber": 33,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "right": {
+        "recordId": "pca:record:af49e81f-5b02-5c5d-9c69-53d62992e8d4",
+        "legacyIds": [
+          "F075"
+        ],
+        "sourceRowNumber": 59,
+        "name": "Kiran De Addiction Centre (OPD)",
+        "type": "Private (OPD)"
+      },
+      "displayAnchorArea": "Amritsar",
+      "sourceAddress": "Amritsar",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:c6b701ea-d8f8-5dfa-baa5-d18e5072081c",
+        "legacyIds": [
+          "F046"
+        ],
+        "sourceRowNumber": 35,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "right": {
+        "recordId": "pca:record:6b298cdd-6f19-565a-a5ea-14a607e0f165",
+        "legacyIds": [
+          "F056"
+        ],
+        "sourceRowNumber": 104,
+        "name": "Methadone Clinic (MMT),Government Medical College",
+        "type": "Government (MMT)"
+      },
+      "displayAnchorArea": "Patiala",
+      "sourceAddress": "Government Medical College, Patiala",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:6af5bdb0-9c3d-5a7d-a274-319fc25fea20",
+        "legacyIds": [
+          "F010"
+        ],
+        "sourceRowNumber": 36,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "right": {
+        "recordId": "pca:record:d8cdd38c-9575-5e87-b114-27f994984f28",
+        "legacyIds": [
+          "F013"
+        ],
+        "sourceRowNumber": 58,
+        "name": "ANR Center for Opiate De-addiction",
+        "type": "Private"
+      },
+      "displayAnchorArea": "Jalandhar",
+      "sourceAddress": "Jalandhar",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:6af5bdb0-9c3d-5a7d-a274-319fc25fea20",
+        "legacyIds": [
+          "F010"
+        ],
+        "sourceRowNumber": 36,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "right": {
+        "recordId": "pca:record:7b4c3852-0fc7-50a8-b906-ada76cae1efe",
+        "legacyIds": [
+          "F015"
+        ],
+        "sourceRowNumber": 111,
+        "name": "Jalandhar District De-addiction Helpline",
+        "type": "District Helpline"
+      },
+      "displayAnchorArea": "Jalandhar",
+      "sourceAddress": "Jalandhar",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:811407de-3824-587d-a2ac-c48a271feb62",
+        "legacyIds": [
+          "F062"
+        ],
+        "sourceRowNumber": 37,
+        "name": "Model Drug De-Addiction Centre",
+        "type": "Government (50-bed model)"
+      },
+      "right": {
+        "recordId": "pca:record:da9edf16-7694-5321-9812-c5418e374dad",
+        "legacyIds": [
+          "F061"
+        ],
+        "sourceRowNumber": 102,
+        "name": "Methadone Clinic (MMT),Government Medical College",
+        "type": "Government (MMT)"
+      },
+      "displayAnchorArea": "Faridkot",
+      "sourceAddress": "Government Medical College, Faridkot",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:d1ce1763-7659-5790-8e2e-05e77ffdd348",
+        "legacyIds": [
+          "F055"
+        ],
+        "sourceRowNumber": 44,
+        "name": "Red Cross Drug De-Addiction Rehabilitation Centre",
+        "type": "NGO (Red Cross)"
+      },
+      "right": {
+        "recordId": "pca:record:27566260-0df9-59b7-80c1-7dff721a7f89",
+        "legacyIds": [
+          "F043"
+        ],
+        "sourceRowNumber": 82,
+        "name": "OOAT Clinic, Saket Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Patiala",
+      "sourceAddress": "Saket Hospital / Patiala",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:8ea74d94-c5b6-5e59-a840-27be4bfc6a1e",
+        "legacyIds": [
+          "F047"
+        ],
+        "sourceRowNumber": 48,
+        "name": "Red Cross Integrated Rehabilitation Centre",
+        "type": "NGO (Red Cross)"
+      },
+      "right": {
+        "recordId": "pca:record:0473980c-2889-5594-84b1-17ba93e49f38",
+        "legacyIds": [
+          "F053"
+        ],
+        "sourceRowNumber": 71,
+        "name": "Lifeline Foundation",
+        "type": "Private / NGO"
+      },
+      "displayAnchorArea": "Patiala",
+      "sourceAddress": "Patiala",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:9941b4c6-d999-53b3-9b36-67213a6a5a3b",
+        "legacyIds": [
+          "F102"
+        ],
+        "sourceRowNumber": 50,
+        "name": "Integrated Rehabilitation Centre for Addicts (IRCA)",
+        "type": "NGO (IRCA)"
+      },
+      "right": {
+        "recordId": "pca:record:cea11186-c010-5bc3-a861-8eb97bf11ca2",
+        "legacyIds": [
+          "F103"
+        ],
+        "sourceRowNumber": 52,
+        "name": "Nai Disha Rehabilitation & Counselling Centre",
+        "type": "Private"
+      },
+      "displayAnchorArea": "Sahibzada Ajit Singh Nagar",
+      "sourceAddress": "Mohali",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:9941b4c6-d999-53b3-9b36-67213a6a5a3b",
+        "legacyIds": [
+          "F102"
+        ],
+        "sourceRowNumber": 50,
+        "name": "Integrated Rehabilitation Centre for Addicts (IRCA)",
+        "type": "NGO (IRCA)"
+      },
+      "right": {
+        "recordId": "pca:record:55806123-9ffd-5d73-92b0-980b0cc1d259",
+        "legacyIds": [
+          "F099"
+        ],
+        "sourceRowNumber": 54,
+        "name": "Substance Use Disorder Treatment Centre",
+        "type": "Government"
+      },
+      "displayAnchorArea": "Sahibzada Ajit Singh Nagar",
+      "sourceAddress": "Mohali",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:cea11186-c010-5bc3-a861-8eb97bf11ca2",
+        "legacyIds": [
+          "F103"
+        ],
+        "sourceRowNumber": 52,
+        "name": "Nai Disha Rehabilitation & Counselling Centre",
+        "type": "Private"
+      },
+      "right": {
+        "recordId": "pca:record:55806123-9ffd-5d73-92b0-980b0cc1d259",
+        "legacyIds": [
+          "F099"
+        ],
+        "sourceRowNumber": 54,
+        "name": "Substance Use Disorder Treatment Centre",
+        "type": "Government"
+      },
+      "displayAnchorArea": "Sahibzada Ajit Singh Nagar",
+      "sourceAddress": "Mohali",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:1aa3bda4-b6a1-5b5b-a273-194b6dfc0b6e",
+        "legacyIds": [
+          "F037"
+        ],
+        "sourceRowNumber": 55,
+        "name": "OST Centre, Civil Hospital",
+        "type": "Government (OST)"
+      },
+      "right": {
+        "recordId": "pca:record:a2eb1ffe-36e7-547d-9552-47cba8ada314",
+        "legacyIds": [
+          "F040"
+        ],
+        "sourceRowNumber": 78,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "displayAnchorArea": "Ludhiana",
+      "sourceAddress": "Civil Hospital, Ludhiana",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:1aa3bda4-b6a1-5b5b-a273-194b6dfc0b6e",
+        "legacyIds": [
+          "F037"
+        ],
+        "sourceRowNumber": 55,
+        "name": "OST Centre, Civil Hospital",
+        "type": "Government (OST)"
+      },
+      "right": {
+        "recordId": "pca:record:c867d5bc-3a36-591a-beac-6c382d8b43fd",
+        "legacyIds": [
+          "F036"
+        ],
+        "sourceRowNumber": 103,
+        "name": "Methadone Clinic (MMT),Civil Hospital",
+        "type": "Government (MMT)"
+      },
+      "displayAnchorArea": "Ludhiana",
+      "sourceAddress": "Civil Hospital, Ludhiana",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:d8cdd38c-9575-5e87-b114-27f994984f28",
+        "legacyIds": [
+          "F013"
+        ],
+        "sourceRowNumber": 58,
+        "name": "ANR Center for Opiate De-addiction",
+        "type": "Private"
+      },
+      "right": {
+        "recordId": "pca:record:7b4c3852-0fc7-50a8-b906-ada76cae1efe",
+        "legacyIds": [
+          "F015"
+        ],
+        "sourceRowNumber": 111,
+        "name": "Jalandhar District De-addiction Helpline",
+        "type": "District Helpline"
+      },
+      "displayAnchorArea": "Jalandhar",
+      "sourceAddress": "Jalandhar",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:a2eb1ffe-36e7-547d-9552-47cba8ada314",
+        "legacyIds": [
+          "F040"
+        ],
+        "sourceRowNumber": 78,
+        "name": "OOAT Clinic, Civil Hospital",
+        "type": "Government (OOAT)"
+      },
+      "right": {
+        "recordId": "pca:record:c867d5bc-3a36-591a-beac-6c382d8b43fd",
+        "legacyIds": [
+          "F036"
+        ],
+        "sourceRowNumber": 103,
+        "name": "Methadone Clinic (MMT),Civil Hospital",
+        "type": "Government (MMT)"
+      },
+      "displayAnchorArea": "Ludhiana",
+      "sourceAddress": "Civil Hospital, Ludhiana",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    },
+    {
+      "left": {
+        "recordId": "pca:record:b0097db2-a1c9-51aa-a83e-d93e3ec2e227",
+        "legacyIds": [
+          "F017"
+        ],
+        "sourceRowNumber": 112,
+        "name": "Hoshiarpur 24x7 OOAT Information Helpline",
+        "type": "District Helpline"
+      },
+      "right": {
+        "recordId": "pca:record:f8171b93-14c7-56c6-bdf0-7591cb9bec5e",
+        "legacyIds": [
+          "F016"
+        ],
+        "sourceRowNumber": 113,
+        "name": "Hoshiarpur District De-addiction Office",
+        "type": "District Office"
+      },
+      "displayAnchorArea": "Hoshiarpur",
+      "sourceAddress": "Hoshiarpur",
+      "notice": "Shared source address or display area does not establish a duplicate; source labels differ."
+    }
+  ],
+  "notice": "Candidates are review prompts only. No source observations were merged, deleted, or hidden."
+}

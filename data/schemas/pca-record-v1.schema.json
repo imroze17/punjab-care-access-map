@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imroze17.github.io/punjab-care-access-map/schema/pca-record-v1.schema.json",
+  "title": "Punjab Care Access source-derived directory record v1",
+  "type": "object",
+  "required": [
+    "recordId", "legacyIds", "recordStatus", "sourceObservations", "recordKind",
+    "ownershipClaim", "serviceMentions", "coverage", "location", "mapPresentation", "review"
+  ],
+  "properties": {
+    "recordId": {"type": "string", "pattern": "^pca:record:[0-9a-f-]{36}$"},
+    "legacyIds": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^F[0-9]{3}$"}},
+    "recordStatus": {"const": "unreviewed_source_record"},
+    "sourceObservations": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["observationId", "sourceArtifactId", "sourceArtifactSha256", "sourceRowNumber", "sourceLineSha256", "parsedTupleSha256", "parserVersion", "parsedFields"],
+        "properties": {
+          "sourceRowNumber": {"type": "integer", "minimum": 2},
+          "parsedFields": {"type": "object", "required": ["name", "district", "address", "type", "contact", "remarks"]}
+        }
+      }
+    },
+    "recordKind": {"type": "object", "required": ["value", "derivation", "ruleId", "evidence"]},
+    "ownershipClaim": {"type": "object", "required": ["value", "derivation", "ruleId", "evidence"]},
+    "serviceMentions": {"type": "array"},
+    "coverage": {"type": "object", "required": ["scope", "sourceAreaText", "derivation", "ruleId"]},
+    "location": {"type": "object", "required": ["sourceAddress", "sourceDistrict", "sourceAddressGranularity", "verifiedCoordinates"], "properties": {"verifiedCoordinates": {"type": "null"}}},
+    "mapPresentation": {"type": "object", "required": ["displayAnchorArea", "editorialRegion", "representation", "isVerifiedGeocode", "coordinatePrecision"], "properties": {"isVerifiedGeocode": {"const": false}, "coordinatePrecision": {"const": "not_geocoded"}}},
+    "review": {"type": "object", "required": ["duplicateReviewStatus", "classificationReviewStatus"]}
+  }
+}

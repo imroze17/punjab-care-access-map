@@ -1,323 +1,252 @@
 # Punjab Care Access Map — Project Overview
 
-## What this project is
+> **Current release:** P0 foundation
+> **Dataset version:** `pca-2026-10-27-v1`
+> **Product type:** static, source-derived directory and geographic orientation tool
+> **Not a verified provider registry, clinical service finder, or facility locator**
 
-Punjab Care Access Map is a browser-based, interactive directory and map of supplied treatment, recovery, rehabilitation, opioid agonist treatment (OOAT), methadone maintenance, de-addiction, and referral records in Punjab, India. It is a **static, client-side website**: it has no account system, server, database, payment flow, or third-party map API requirement.
+## 1. What the project is
 
-The delivered map uses a user-supplied reference HTML page for the visual design and structure. The reference was retained as the design base, while its earlier facility list was replaced with the refreshed facility data. The finished site offers a searchable listing index, clickable map markers and districts, provider and service filters, cultural-region and river overlays, CSV export, and client-side PNG/PDF map downloads.
+Punjab Care Access Map is a responsive single-page map and directory for **112 owner-supplied records** related to treatment, recovery, de-addiction, rehabilitation, OOAT, OST, MMT/methadone, referral, coordination, and information services in Punjab, India. It runs entirely in the browser: no server, database, account system, analytics, payment flow, geocoder, tile service, or private runtime credential is required.
 
-The website’s primary runtime output is [`public/index.html`](public/index.html). It is self-contained: the facility records, district geometry, cultural-region definitions, river traces, styling, and interactive JavaScript are embedded in that document.
+The visual design preserves the supplied white-and-green reference: dark-green masthead, rounded filter/list panels, a responsive sidebar/map composition, and interactive district, cultural-region, and river overlays. P0 deliberately changed the data model and map semantics while retaining that visual language.
 
-## Delivered scope
+The canonical static output is `public/index.html`. `docs/` is a generated GitHub Pages copy of `public/`; it is never a separately edited source of truth.
 
-The current map includes all 112 records from the updated supplied CSV-like file. It supports:
+## 2. P0 geographic safety rule
 
-- Full-text search across the listing information.
-- Provider-category filters for **Government**, **NGO / Trust**, **Private**, and **Helpline / Office**.
-- A detailed service-type selector generated from the source `Type` values.
-- A scrollable, filtered listing index whose entries focus the corresponding map marker.
-- Clickable district areas that focus the map view and related listings.
-- Toggleable district boundaries and district labels.
-- Toggleable cultural-region wash and labels for **Majha**, **Doaba**, **Malwa**, and **Puadh**.
-- Toggleable major-river lines and labels for **Ravi**, **Beas**, **Sutlej**, **Ghaggar**, and **Kali Bein**.
-- Map zoom, zoom-out, and reset controls.
-- CSV export of the currently visible results.
-- Client-side PNG and one-page PDF exports of the map’s current visible state, including a provider-category key.
+### Directory records are not facility coordinates
 
-The user-facing page title is **Punjab Care Access Map | Treatment & Referral Services**. The map’s visual system is the restored reference design: a dark-green header, a white-and-green interface, rounded utility panels, a left-side filter/listing column, and a main map card. The previously introduced decorative grid and degree-boundary annotations were removed.
+The supplied source does not provide independently verified latitude/longitude values. P0 therefore does **not** publish facility-like coordinates, synthetic anchor coordinates, or sunflower layout offsets for individual source records.
 
-## The updated source data
+The map instead presents two evidence-aligned representations:
 
-### Source supplied by the user
+| Representation | Current accounting | Meaning |
+| --- | ---: | --- |
+| **District-group count symbols** | 108 records across 22 reported district groups | A count bubble means that source records report that district. It does **not** identify a facility, a precise location, a service capacity, or a travel destination. |
+| **Coverage-scope controls** | 4 records: 1 Punjab-wide/multi-district and 3 statewide | These are listed through dedicated controls and never placed at an invented map point. |
 
-The active data source was the user-provided file:
+The map, record detail, legend, ARIA label, CSV, PNG, and PDF all say that the map groups directory records by **reported district or coverage scope—not facility locations**. A source address is shown as supplied text and is labelled as unverified for map purposes.
+
+### Context layers
+
+Punjab district outlines/labels, the Majha/Doaba/Malwa/Puadh wayfinding overlays, and Ravi/Beas/Sutlej/Ghaggar/Kali Bein river traces remain available as orientation layers. The cultural regions are not official administrative boundaries; river traces are schematic orientation lines, not a hydrological survey. None of these layers verifies a source record.
+
+## 3. Supplied source and provenance
+
+### Source contract
+
+The approved source is a CSV-like six-field file with 112 rows and this exact header:
+
+1. `Name`
+2. `District`
+3. `Address / Location`
+4. `Type`
+5. `Contact (if available)`
+6. `Remarks`
+
+The raw source is intentionally **not committed**. Its origin and integrity are captured by [`data/manifests/source-artifact.v1.json`](data/manifests/source-artifact.v1.json), which contains the artifact ID, original filename, SHA-256 hash, expected header, parser version, record count, and an explicit notice that raw content is not committed.
+
+### Why the importer is controlled
+
+The current source has unquoted commas in names and remarks while its address field is reliably quoted. A generic comma split can shift values between fields. [`scripts/import_legacy_source.py`](scripts/import_legacy_source.py) validates the known contract and fails rather than guessing when it finds an unexpected header, blank row, missing quoted address anchor, malformed address boundary, required blank field, or mismatch against the legacy baseline.
+
+A known malformed leading/trailing quote in a free-text remark is recoverable only with an explicit `parseWarnings` entry. Each imported observation retains:
+
+- Original source row number;
+- SHA-256 of the raw source line;
+- SHA-256 of the parsed six-field tuple;
+- Parser version (`pca-legacy-import/v2`);
+- Extracted `[reference:…]` source tokens;
+- Any controlled parse warning.
+
+This preserves auditable source lineage without committing the raw upload.
+
+## 4. Canonical record model and IDs
+
+[`data/canonical/punjab-care-records.v1.json`](data/canonical/punjab-care-records.v1.json) contains 112 `pca-record/v1` **source-derived directory records**, not confirmed facilities. Its public schema is [`data/schemas/pca-record-v1.schema.json`](data/schemas/pca-record-v1.schema.json).
+
+Each record stores:
+
+```json
+{
+  "recordId": "pca:record:<UUID>",
+  "legacyIds": ["F001"],
+  "recordStatus": "unreviewed_source_record",
+  "sourceObservations": [{
+    "sourceArtifactId": "source:deepseek_csv_20261027_e08391",
+    "sourceRowNumber": 2,
+    "sourceLineSha256": "…",
+    "parsedTupleSha256": "…",
+    "parserVersion": "pca-legacy-import/v2",
+    "parsedFields": {"name":"…","district":"…","address":"…","type":"…","contact":"…","remarks":"…"}
+  }],
+  "recordKind": {"value":"…","derivation":"source_text_rule","ruleId":"…","evidence":[]},
+  "ownershipClaim": {"value":"…","derivation":"source_text_rule","ruleId":"…","evidence":[]},
+  "serviceMentions": [],
+  "coverage": {"scope":"…"},
+  "location": {"verifiedCoordinates": null},
+  "mapPresentation": {"representation":"district_group_summary","isVerifiedGeocode":false},
+  "review": {"duplicateReviewStatus":"not_reviewed","classificationReviewStatus":"not_reviewed"}
+}
+```
+
+### Durable IDs and legacy aliases
+
+The former `F001`–`F112` identifiers remain as `legacyIds`; they are aliases, not canonical identity. [`data/migrations/legacy-id-crosswalk.v1.json`](data/migrations/legacy-id-crosswalk.v1.json) maps the legacy alias and parsed-tuple hash to a durable canonical `recordId`.
+
+When a future approved source is imported with `--crosswalk`, any unchanged parsed observation reuses its existing canonical record ID even if rows are reordered. A changed/new tuple fails safe pending a reviewed migration; it is never silently treated as the old record, silently assigned to a legacy alias, or silently substituted into the P0 baseline. The importer regression suite contains a row-reorder test proving durable reuse.
+
+## 5. Derived fields: source text only
+
+P0 keeps concepts separate and labels them as rules derived from supplied text. None is a verification claim.
+
+| Field | Values / basis | It does **not** establish |
+| --- | --- | --- |
+| `recordKind` | Source site/provider, administrative/coordination, helpline/information, multi-site/coverage; derived from name/type/district/address text | A confirmed facility, operation, programme, or contact route |
+| `ownershipClaim` | Government, NGO/trust, private, mixed/ambiguous, or not stated; derived from source `Type` | Legal ownership, funding, accreditation, endorsement, or service provision |
+| `serviceMentions` | OOAT, MMT/methadone, DDTC, OST, model centre, rehabilitation, helpline terms found in supplied text | Current availability, clinical suitability, staff, capacity, or eligibility |
+| `coverage.scope` | Reported district/single-site, multiple-within-district, multi-district, statewide | Actual catchment, eligibility, distance, or service availability |
+| `location.sourceAddressGranularity` | Coverage-only, multiple-sites, district/city, named institution, detailed address, locality | A validated address or verified coordinate |
+| `mapPresentation` | District summary or coverage-scope control | A facility point, exact route, nearest-service result, or care-access measure |
+
+The user interface accordingly uses **Source ownership claim**, **Source record role**, and **Coverage scopes** labels. Source terms are shown as source terms, not verified offerings.
+
+## 6. Duplicate-review workflow
+
+[`data/reviews/duplicate-candidates.v1.json`](data/reviews/duplicate-candidates.v1.json) is review material, never an automatic deduplication action. The current report contains:
+
+- **3 duplicate-review candidates:** one high-confidence and two medium-confidence prompts;
+- **27 same-location/different-source-label cases:** recorded separately because a shared source address/display area does not prove two labels represent the same programme.
+
+Candidate entries preserve both record IDs, legacy aliases, source observations/rows, normalized comparisons, reason, confidence, and blank reviewer/date/rationale fields. P0 never merges, deletes, hides, or resolves a candidate automatically.
+
+## 7. Browser experience
+
+The browser-safe derived view is [`data/generated/runtime-records.v1.json`](data/generated/runtime-records.v1.json). It contains display fields needed by the page and contains **no `lat` or `lon` fields**.
+
+The generated static page offers:
+
+- Full-text search across source/derived display fields;
+- Source-ownership claim filter buttons with current counts;
+- Source-record-role selector;
+- Punjab-wide/multi-district and statewide coverage-scope controls;
+- Clickable district count symbols that filter the directory, not facility points;
+- A listing-first route to every record;
+- Detail cards with supplied address/contact text, source role, coverage, source terms, location-precision statement, and current-status caveat;
+- District boundary/label, cultural-region, regional-label, river, and river-label toggles;
+- Map pan, zoom, and reset;
+- Filtered CSV export and PNG/PDF map exports.
+
+The empty result message is intentionally non-inferential: no matching directory rows do not establish that services are unavailable.
+
+## 8. Exports
+
+### CSV
+
+The filtered CSV includes durable and legacy IDs, name, record kind, source ownership claim, source terms, coverage, reported district/scope, source district/address, location precision, map representation, source type, contact display, source remarks, source row, and dataset version. Formula-like prefixes (`=`, `+`, `-`, `@`) are neutralized before download.
+
+### PNG and PDF
+
+PNG and one-page PDF exports are generated in browser JavaScript from the current SVG state. They include an interpretation key, the dataset version, and a caveat that the map groups records by reported district/coverage scope rather than facility location. No export generates or embeds new coordinates.
+
+Manual P0 validation exercised a filtered coverage-scope export: the CSV contained one `coverage_scope_control` record with no map point; PNG had a valid PNG signature; PDF had a valid `%PDF-1.4` header and one page.
+
+## 9. Source tree and generated artifacts
 
 ```text
-deepseek_csv_20261027_e08391.txt
+README.md                         # quick start and non-claims
+DEVELOPER_HANDOFF.md              # owner-supplied P0–P2 specification
+PROJECT_OVERVIEW.md               # this document
+plan.md                           # approved P0 plan
+TODO.md                           # delivery status
+Makefile                          # normal workflow
+
+data/
+  canonical/punjab-care-records.v1.json
+  generated/runtime-records.v1.json
+  generated/build-manifest.v1.json
+  manifests/source-artifact.v1.json
+  migrations/legacy-id-crosswalk.v1.json
+  reviews/duplicate-candidates.v1.json
+  schemas/pca-record-v1.schema.json
+  facilities.updated.json         # historical importer reconciliation baseline
+
+src/
+  template.html                   # committed static template with placeholders
+  p0-runtime.js                   # district-summary renderer, filters, exports
+  p0-style.css                    # P0 notice, controls, summary marker styles
+  logo.svg
+
+scripts/
+  import_legacy_source.py         # controlled provenance-safe importer
+  build_p0.py                     # canonical -> runtime/public build
+  sync_github_pages.py            # public -> docs full sync
+  validate_p0.py                  # deterministic build/data checks
+  create_p0_template.py           # retained one-time template migration utility
+  prepare_updated_facilities.R    # retired historical intermediate generator
+  restore_reference_design.py     # retired historical design helper
+
+tests/test_import_legacy_source.py # import and durable-ID regression tests
+public/                            # generated static deployment output
+docs/                              # generated GitHub Pages output
 ```
 
-Although the filename uses `.txt`, its contents are a comma-separated dataset. It contains a header and **112 source records** (source rows 2 through 113). The six logical source columns are:
+`public/` and `docs/` are generated. Do not edit them directly or independently.
 
-| Source column | How the map uses it |
-| --- | --- |
-| `Name` | Displayed as the listing/facility name and in search results. |
-| `District` | Preserved as supplied and used to derive a normalized map district. |
-| `Address` | Shown in the selected-listing panel and retained as the original source location. |
-| `Type` | Used in the detailed type filter and to derive provider category and service group. |
-| `Contact` | Shown in the selected-listing panel when present; rendered as a telephone link. |
-| `Remarks` | Included in the selected-listing detail panel and CSV export. |
+## 10. Reproducible workflow
 
-The raw upload resides outside the Git repository, so it is **not committed**. The reproducible browser-ready output generated from it is committed as [`data/facilities.updated.json`](data/facilities.updated.json).
-
-### Why the parser is custom
-
-The supplied file has commas inside names and free-text remarks. In addition, the address is the reliably quoted field. A generic split-on-comma parser would shift values into the wrong columns for affected records.
-
-[`scripts/prepare_updated_facilities.R`](scripts/prepare_updated_facilities.R) therefore uses a small quote-aware parser. For every source line, it:
-
-1. Walks characters and separates commas only when outside quoted text.
-2. Locates the quoted address field.
-3. Reconstructs the name from all fields before the district/address boundary.
-4. Preserves free-text remarks after the contact field, including their internal commas.
-5. Produces six aligned logical values: `Name`, `District`, `Address`, `Type`, `Contact`, and `Remarks`.
-
-This approach was specifically implemented to avoid corrupting facility names or remarks during the CSV refresh.
-
-### Derived record model
-
-Each source row becomes one JSON record. The map-ready JSON retains the original content and adds mapping, classification, and traceability fields.
-
-| Field | Meaning |
-| --- | --- |
-| `id` | Stable display identifier generated as `F001` through `F112`. |
-| `Name`, `District`, `Address`, `Type`, `Contact`, `Remarks` | Preserved logical source values. |
-| `sourceDistrict` | Original unnormalized district text from the CSV. |
-| `sourceLocation` | Original address from the CSV. |
-| `sourceRow` | One-based original file row number, including the header row. |
-| `mapDistrict` | Normalized locality used for the display anchor and map grouping. |
-| `region` | Derived cultural-region label. |
-| `category` | Derived primary provider category. |
-| `serviceGroup` | Derived broad service classification. |
-| `lat`, `lon` | Display coordinates for the marker; these are not claimed as rooftop coordinates. |
-
-## How the CSV is transformed for the map
-
-### 1. District normalization
-
-The CSV uses several local, historical, abbreviated, or multi-location district labels. The R script preserves the supplied `District` field and creates a distinct `mapDistrict` for reliable grouping and display anchoring.
-
-Current normalization rules include:
-
-| Supplied district label | `mapDistrict` used on the map |
-| --- | --- |
-| `Ropar` | `Rupnagar` |
-| `Shaheed Bhagat Singh Nagar (Nawanshahr)` | `Shaheed Bhagat Singh Nagar` |
-| `Nawanshahr` | `Shaheed Bhagat Singh Nagar` |
-| `Mohali` | `Sahibzada Ajit Singh Nagar` |
-| `Derabassi (Mohali)` | `Sahibzada Ajit Singh Nagar` |
-| `Khanpur (Patiala)` | `Patiala` |
-| `Ropar/Ludhiana` | `Ludhiana` |
-| `Punjab (multiple)` | `Punjab-wide` |
-| `Statewide` | `Statewide` |
-
-There are **24 display anchors** in the current data. These consist of district/locality anchors plus `Punjab-wide` and `Statewide` anchors for records that do not belong to one map district. The site header describes Punjab’s **23 districts**; the additional display anchors are service coverage scopes, not administrative districts.
-
-### 2. Cultural-region assignment
-
-Each normalized district is assigned to one of the four cultural wayfinding regions or to `Punjab-wide`:
-
-- **Majha:** Pathankot, Gurdaspur, Amritsar, Tarn Taran.
-- **Doaba:** Hoshiarpur, Jalandhar, Kapurthala, Shaheed Bhagat Singh Nagar.
-- **Malwa:** Ferozepur, Fazilka, Sri Muktsar Sahib, Faridkot, Moga, Ludhiana, Malerkotla, Barnala, Sangrur, Bathinda, and Mansa.
-- **Puadh:** Patiala, Fatehgarh Sahib, Sahibzada Ajit Singh Nagar, and Rupnagar.
-- **Punjab-wide:** statewide/multi-district entries that should not be represented as one cultural region.
-
-These overlays are a geographic wayfinding aid. They are not presented as official administrative boundaries.
-
-### 3. Primary category assignment
-
-The script derives a primary category from the source `Type` field using transparent keyword rules:
-
-1. If `Type` contains `Helpline` or `District Office`, the record is **Helpline / Office**.
-2. Otherwise, if it starts with `Government` or `District`, it is **Government**.
-3. Otherwise, if it starts with `Private`, it is **Private**.
-4. All remaining records are **NGO / Trust**.
-
-The resulting category totals are:
-
-| Provider category | Records |
-| --- | ---: |
-| Government | 75 |
-| Private | 17 |
-| NGO / Trust | 14 |
-| Helpline / Office | 6 |
-| **Total** | **112** |
-
-The fourth category, **Helpline / Office**, was added during the refresh so referral and information records would not be misleadingly grouped with facility providers.
-
-### 4. Service-group assignment
-
-A broader `serviceGroup` is also derived from the `Type` text for analysis and export. The current results are:
-
-| Service group | Records |
-| --- | ---: |
-| OOAT service | 30 |
-| District coordination | 19 |
-| Private provider | 17 |
-| NGO / Trust | 14 |
-| DDTC | 12 |
-| Helpline / information | 6 |
-| Methadone maintenance | 6 |
-| Model centre | 5 |
-| Government service | 3 |
-| **Total** | **112** |
-
-### 5. Marker placement and overlap handling
-
-The CSV provides locations, not verified rooftop coordinates. The project therefore uses named display anchors rather than representing every facility as an exact latitude/longitude claim.
-
-For each `mapDistrict`, the R script assigns an anchor latitude/longitude. Records sharing an anchor are then spread in a deterministic sunflower-style pattern. The offset uses a fixed angular increment and radius progression, so overlapping records remain separately clickable while the results stay reproducible on every build.
-
-This is why the map note says that marks are display anchors, not rooftop geocodes. The original address and contact information remain visible in the listing detail for checking before travel.
-
-### 6. Output files
-
-Running the R script creates:
-
-- [`data/facilities.updated.json`](data/facilities.updated.json): the 112 browser-ready JSON records.
-- [`data/facility-refresh-summary.txt`](data/facility-refresh-summary.txt): a concise record, category, and service-group count summary.
-
-## Map geography and contextual layers
-
-### District boundaries and labels
-
-The map embeds a filtered Punjab district geometry layer in `public/index.html`. The site’s map note attributes the district geometry to the **LGD Districts (2024)** layer filtered to Punjab through Bharat Atlas, under the stated CC0-1.0 / CC-BY-4.0 attribution. District outlines and labels each have their own on/off controls.
-
-### Cultural-region overlays
-
-Majha, Doaba, Malwa, and Puadh are rendered as separately toggled color washes and labels. These do not replace district boundaries; they sit alongside them as a cultural orientation layer.
-
-### River overlays
-
-The map includes schematic orientation lines for five water features: Ravi, Beas, Sutlej, Ghaggar, and Kali Bein. Major rivers and river labels can be toggled independently. River traces are an orientation layer, not a hydrological survey product.
-
-## Interaction model
-
-The website runs entirely in the browser. The interactive logic is embedded in the final HTML and maintains a client-side state for text search, selected provider categories, selected service type, selected district, selected facility, and layer visibility.
-
-### Search and filters
-
-The search field filters listings by source-derived listing content. Category buttons can be independently activated or deactivated. The detailed service selector filters by the original `Type` value. The index count and visible-listing metric update to reflect the active filters.
-
-### Browsing records
-
-The listing index and map are connected in both directions:
-
-- Selecting a listing highlights/focuses its marker.
-- Selecting a marker opens a detail panel with category, district/region, source `Type`, address, contact link when available, and remarks.
-- Selecting a district focuses the district context and works with the active filters.
-- A reset control returns the map interaction to its default state.
-
-### Exports
-
-**CSV export** produces the currently visible listings, including mapping/classification fields and original source fields.
-
-**PNG and PDF map exports** are fully client-side. The code clones the current SVG map, adds an export key, serializes it, renders it to an in-memory canvas, and downloads either:
-
-- `punjab-care-access-map.png`, or
-- `punjab-care-access-map.pdf`.
-
-The PDF exporter builds a one-page raster PDF in browser JavaScript. The export controls were live-tested: the PNG has a valid PNG signature, and the PDF has a valid `%PDF-1.4` header and one page.
-
-## Technical architecture
-
-The current site intentionally avoids a framework, server, database, client credentials, and map tile dependency.
-
-- **Presentation and behaviour:** a single standalone HTML document with inline CSS, SVG, and JavaScript.
-- **Data:** an embedded `const facilities = [...]` JSON array.
-- **Map:** embedded SVG geometry and custom client-side map drawing/interaction logic; it does not use Leaflet, MapLibre, OpenLayers, or a third-party live map tile service.
-- **Export:** browser-standard `XMLSerializer`, `Canvas`, Blob URLs, and a small custom PDF assembler.
-- **Development preview:** a simple static server can serve `public/` on port 3000.
-- **Manus static-build configuration:** `command: true` with `public` as output directory.
-
-## File guide
-
-| Path | Purpose |
-| --- | --- |
-| [`public/index.html`](public/index.html) | Canonical standalone map website used by the static build and CDN fallback. |
-| [`public/logo.svg`](public/logo.svg) | Site/project marker logo and favicon asset. |
-| [`public/manus-routes.json`](public/manus-routes.json) | Route manifest declaring the single home route. |
-| [`data/facilities.updated.json`](data/facilities.updated.json) | Reproducible, normalized browser-ready output from the updated CSV. |
-| [`data/facility-refresh-summary.txt`](data/facility-refresh-summary.txt) | Counts by category and service group. |
-| [`scripts/prepare_updated_facilities.R`](scripts/prepare_updated_facilities.R) | CSV-aware parser, normalizer, classifier, anchor generator, and JSON/summary writer. |
-| [`scripts/restore_reference_design.py`](scripts/restore_reference_design.py) | Rebuilds the final public map from the attached reference design and current JSON data; preserves the requested reference visual language while adding current record totals, Helpline/Office support, and map exports. |
-| [`scripts/sync_github_pages.py`](scripts/sync_github_pages.py) | Copies the static site into `docs/` for GitHub Pages and changes the favicon to a repository-subpath-safe relative link. |
-| [`docs/index.html`](docs/index.html) | GitHub Pages-ready copy of the static site. It is generated from `public/index.html`; do not treat it as an independent source of truth. |
-| [`docs/logo.svg`](docs/logo.svg) | GitHub Pages copy of the favicon/logo. |
-| [`docs/.nojekyll`](docs/.nojekyll) | Prevents Jekyll processing for the GitHub Pages source. |
-| [`app.config.ts`](app.config.ts) | Project-level durable logo metadata. |
-| [`TODO.md`](TODO.md) | Confirmed delivery requirements and their status. |
-| [`scripts/build_atlas_page.py`](scripts/build_atlas_page.py) | Historical intermediate generator from the temporary antique-atlas design pass. Not the current final-design build path. |
-| [`scripts/refine_atlas_exports.py`](scripts/refine_atlas_exports.py) | Historical refinement script from the antique-atlas pass. Its export-related changes are retained in the current restored output. |
-
-## Rebuilding after a future CSV update
-
-The source-data build is reproducible. The normal update sequence is:
+A normal checkout build does not need `/home/ubuntu/upload` or another raw source file:
 
 ```bash
-cd /path/to/punjab-care-access-map
-
-# 1. Point source_path in scripts/prepare_updated_facilities.R to the new supplied file,
-#    or place the new CSV at the path the script expects.
-Rscript scripts/prepare_updated_facilities.R
-
-# 2. Rebuild public/index.html from the approved reference design plus the fresh JSON.
-#    The script expects the reference design file at its configured reference path.
-python3 scripts/restore_reference_design.py
-
-# 3. Refresh the GitHub Pages source copy after public/ has changed.
-python3 scripts/sync_github_pages.py
+make build       # canonical data -> public/ -> docs/
+make test        # importer contract and durable-ID regression tests
+make validate    # canonical/runtime/Pages/static-JS checks
+make check       # build + test + validate
+make serve       # serves public/ on port 3000
 ```
 
-After rebuilding, validate the counts in `data/facility-refresh-summary.txt`, check that `public/index.html` contains the expected number of embedded facility records, and review the map in a browser. Then commit and push `data/`, `public/`, `docs/`, and any intentionally changed scripts together.
+To import an approved replacement source that is available outside the repository:
 
-Important maintenance notes:
+```bash
+make refresh-data \
+  SOURCE=/absolute/path/to/approved-source.txt \
+  ARTIFACT_ID=source:approved-artifact \
+  DATASET_VERSION=pca-YYYY-MM-vN
+```
 
-- Do not edit the generated facility JSON by hand; update the supplied data and rerun the R script.
-- Keep the raw user-supplied CSV in a controlled location. It is intentionally not committed by default.
-- Preserve the distinction between `District` (source text) and `mapDistrict` (normalized display location).
-- Add a normalization rule and an anchor before accepting a new district/locality value that lacks one.
-- Treat the cultural-region mapping as an explicit editorial choice. Revise it only deliberately.
-- Regenerate `docs/` whenever `public/` changes, otherwise GitHub Pages will serve an older copy.
+The refresh path validates the six-field contract, uses the committed legacy reconciliation baseline and ID crosswalk, regenerates output, and runs the complete checks. A new or changed source observation fails safe rather than being silently assigned to a legacy record or silently replacing one; complete a reviewed migration before introducing it into the P0 baseline.
 
-## Validation completed
+## 11. Deterministic validation
 
-The project was checked at several levels:
+`make check` verifies:
 
-- The updated CSV was parsed and transformed into exactly 112 JSON records.
-- The generated counts match the category and service-group summary.
-- Every normalized location received a display anchor; the R script stops if any anchor is missing.
-- The public HTML was checked for the current data count, filters, river-label controls, and export handlers.
-- Desktop and mobile screenshots were reviewed during the implementation iterations.
-- The PNG and PDF export controls were exercised in a browser. The downloaded PNG and PDF signatures were validated, and the PDF was verified as a one-page non-encrypted document.
-- The static page and route manifest were served successfully from the project preview server.
-- The GitHub repository contains a Pages-ready `docs/` folder with the map, logo, and `.nojekyll` file.
+1. Missing quoted-address anchors are rejected;
+2. Durable IDs survive a source-row reorder when the crosswalk is supplied;
+3. Script/test Python syntax;
+4. 112 canonical records with unique record IDs, legacy aliases, and source rows;
+5. Manifest/canonical agreement, lineage fields, explicit null coordinates, and source-text derivations;
+6. Complete crosswalk and review-report shape;
+7. No coordinate-bearing runtime record; 108 district-summary records, four coverage controls, 22 district groups, and two coverage scopes;
+8. Equality between generated runtime JSON and records embedded in `public/index.html`;
+9. Absence of the legacy coordinate renderer and facility-marker wording;
+10. `public/`/`docs/` parity except for the intentional GitHub Pages-relative favicon path;
+11. `.nojekyll`, logo parity, route manifest, and inline JavaScript syntax.
 
-## Repository and hosting status
+## 12. Hosting
 
-The canonical source repository is:
+`public/` is the Manus static build output. `docs/` is synchronized from it for GitHub Pages, with a relative favicon path and `.nojekyll` for project-subpath compatibility. A repository URL is not itself a public map URL; before sharing a live link, configure/verify the GitHub Pages environment and visit the deployed site.
 
-- <https://github.com/imroze17/punjab-care-access-map>
+## 13. Explicit limitations and decisions still required
 
-The repository is public. The `main` branch contains a GitHub Pages-ready `docs/` folder, so GitHub Pages should be configured to deploy from **branch `main`** and **folder `/docs`**. Once enabled and built by GitHub, the intended website address is:
+P0 does **not** verify or claim current operation, ownership, licence/accreditation, capacity, fees, hours, eligibility, language, accessibility, clinical suitability, confidentiality, address accuracy, contact accuracy, travel time, nearest service, or quality. It does not establish a census of services or a district-level access gap.
 
-- <https://imroze17.github.io/punjab-care-access-map/>
+Owner/editorial work still needed includes:
 
-At the time this overview was written, GitHub’s Pages API still reported no active Pages configuration and the address returned HTTP 404. The site files are present; the remaining hosting action is to enable **Settings → Pages → Deploy from a branch → `main` / `/docs` → Save** in the repository.
+- Resolve duplicate-review candidates with reviewer, date, decision, and rationale;
+- Review same-location/different-source-label cases;
+- Establish an approved verification, correction, archival, privacy, and public-display policy;
+- Complete P1 accessibility, contact-action, CI/CD, deployment monitoring, and usability work from the developer handoff;
+- Complete P2 reviewed localization, richer source-backed taxonomy, and any future verified-geocode governance.
 
-A separate public self-contained HTML fallback was uploaded during the work. It is useful for immediate sharing, but GitHub Pages is the repository-backed route prepared for ongoing hosting.
-
-## Important limitations and interpretation guidance
-
-- The data is derived exclusively from the supplied CSV; this project does not independently verify that a listed service is currently open, accredited, funded, or clinically appropriate.
-- Facility markers are **display anchors**, not verified rooftop geocodes. They help users orient themselves by district/locality but should not be used as turn-by-turn directions.
-- Source district text is preserved. The normalized district is only a display and grouping field.
-- Majha, Doaba, Malwa, and Puadh are editorial cultural-region overlays, not official administrative boundaries.
-- River traces are schematic orientation lines rather than a hydrographic reference dataset.
-- Search, filtering, and exports happen in the browser. There is no central database, user analytics store, or automatic source-data refresh.
-- A CSV update requires a deliberate rebuild and redeployment. The data does not update automatically.
-- Since the GitHub repository is public, its code, embedded public facility data, and commit history are visible to the public. The GitHub Pages link is a website link, but technically minded visitors can still inspect delivered browser assets as they can with any public static website.
-
-## Implementation history
-
-| Commit | Summary |
-| --- | --- |
-| `9333a24` | Initial Punjab care access map publication. |
-| `62980e6` | Updated the map with the refreshed data and an interim antique-atlas style pass. |
-| `77626fb` | Added tested PNG/PDF exports and related map refinements. |
-| `912700b` | Restored the user-supplied reference design while preserving current data and export functionality. |
-| `1d6465f` | Added the GitHub Pages-ready `docs/` copy and sync helper. |
-
-## Practical handoff summary
-
-For most content changes, the only files that need attention are the supplied CSV, [`scripts/prepare_updated_facilities.R`](scripts/prepare_updated_facilities.R), [`scripts/restore_reference_design.py`](scripts/restore_reference_design.py), and then [`scripts/sync_github_pages.py`](scripts/sync_github_pages.py). The map interface itself is intentionally delivered as a portable static HTML file, making it easy to share, archive, or host on any ordinary static web host.
+Until those decisions are complete, describe the map as a **source-derived directory and geographic orientation aid**, not as a verified care-access system.

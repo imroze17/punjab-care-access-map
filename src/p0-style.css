@@ -1,0 +1,113 @@
+/* P0: source-record geography and uncertainty presentation */
+.p0-map-notice {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-left: 4px solid #176447;
+  border-radius: 8px;
+  background: #eef7f1;
+  color: #224c39;
+  font-size: .84rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.coverage-controls {
+  margin: 15px 0 6px;
+  padding-top: 13px;
+  border-top: 1px solid #dbe9df;
+}
+
+.coverage-buttons {
+  display: grid;
+  gap: 7px;
+}
+
+.coverage-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid #cbded2;
+  border-radius: 8px;
+  background: #f8fbf9;
+  color: #2f5e49;
+  cursor: pointer;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.coverage-button span {
+  min-width: 22px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #e4f0e9;
+  color: #176447;
+  text-align: center;
+}
+
+.coverage-button:hover,
+.coverage-button:focus-visible,
+.coverage-button.active {
+  border-color: #176447;
+  outline: none;
+}
+
+.coverage-button.active {
+  background: #176447;
+  color: #fff;
+}
+
+.coverage-button.active span {
+  background: #fff;
+  color: #176447;
+}
+
+.coverage-note,
+.p0-card-role,
+.p0-muted,
+.p0-uncertainty {
+  color: #5a6d62;
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.coverage-note { margin: 8px 0 0; }
+.p0-card-role { margin: 7px 0 0 28px; }
+.p0-muted { font-style: italic; }
+.p0-uncertainty {
+  margin: 10px 0;
+  padding: 8px 10px;
+  border-radius: 7px;
+  background: #f3f7f4;
+}
+
+.district-summary-group { cursor: pointer; }
+.district-summary-group:focus-visible { outline: none; }
+.district-summary-group:focus-visible .district-summary-marker {
+  stroke: #101d16;
+  stroke-width: 4;
+}
+
+.district-summary-marker {
+  fill: #176447;
+  stroke: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 1px 2px rgba(20, 54, 38, .3));
+}
+
+.district-summary-count {
+  fill: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .p0-map-notice { font-size: .8rem; }
+  .coverage-button { min-height: 42px; }
+}

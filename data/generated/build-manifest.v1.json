@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "pca-build-manifest/v1",
+  "datasetVersion": "pca-2026-10-27-v1",
+  "sourceArtifactId": "source:deepseek_csv_20261027_e08391",
+  "sourceArtifactSha256": "41962223c49fac19932e9f141548a4e2fa7d1c2dd1a3d48312382efdf70fe24e",
+  "sourceRecordCount": 112,
+  "districtGroupRecordCount": 108,
+  "coverageScopeRecordCount": 4,
+  "runtimeRecordsSha256": "3ef91042371d28c57a6e5c40664f0b0ff7fb4b6bc43811ecf21717965280c85d",
+  "coordinatesPublished": false,
+  "notice": "Runtime records are source-derived directory records grouped by reported district or coverage scope, not verified facility locations."
+}

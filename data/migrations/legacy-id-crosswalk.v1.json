@@ -1,0 +1,679 @@
+{
+  "schemaVersion": "pca-legacy-id-crosswalk/v1",
+  "datasetVersion": "pca-2026-10-27-v1",
+  "notice": "Legacy F identifiers remain aliases only. They are not canonical durable identifiers.",
+  "mappings": [
+    {
+      "legacyId": "F001",
+      "recordId": "pca:record:d489b7ab-b92b-5451-9055-22811f12f5f1",
+      "sourceRowNumber": 2,
+      "parsedTupleSha256": "1e76f37a1d55fde508413635033ec47a7162708e16a3a6074564eb224bce2c0d"
+    },
+    {
+      "legacyId": "F003",
+      "recordId": "pca:record:00acea6f-82cf-5a9d-8d2b-193f8b94efbf",
+      "sourceRowNumber": 3,
+      "parsedTupleSha256": "4ff9f5a6ef7a59285695f55ce82c11138066f08923da77f8a5ac2322a149c7e1"
+    },
+    {
+      "legacyId": "F007",
+      "recordId": "pca:record:df2c25df-bfb2-5cdc-a53c-8a21b2b40444",
+      "sourceRowNumber": 4,
+      "parsedTupleSha256": "e2299f64278c13084bd26e62edba1207754d8b045eb086c6a453cf20adc1da8a"
+    },
+    {
+      "legacyId": "F012",
+      "recordId": "pca:record:3b973ddf-9c69-55bc-953e-a1296c491f87",
+      "sourceRowNumber": 5,
+      "parsedTupleSha256": "a8da9bae3dbd9e773340404bab2190091692ced90708ba559a325bba80960b3e"
+    },
+    {
+      "legacyId": "F020",
+      "recordId": "pca:record:52537d9e-62a0-5f48-8f41-e91da39abe9c",
+      "sourceRowNumber": 6,
+      "parsedTupleSha256": "afb84e2c92a9a33c7966b88a3534851b579509b0876b5f4c1cd3ae1c7954ab57"
+    },
+    {
+      "legacyId": "F023",
+      "recordId": "pca:record:edaaea22-2371-5b2f-a31e-8cf8399d0bc4",
+      "sourceRowNumber": 7,
+      "parsedTupleSha256": "30e4ce7a9a269b52ff9206c530d5f393bc350e75498f556746d4102a7e1fe9d3"
+    },
+    {
+      "legacyId": "F025",
+      "recordId": "pca:record:4c4af27f-1fa8-5d27-ab73-99482dde53e5",
+      "sourceRowNumber": 8,
+      "parsedTupleSha256": "61deb9dbf4b167971807c64436e410ba6eabde09c035b03681dbaf1f3d2b39c9"
+    },
+    {
+      "legacyId": "F027",
+      "recordId": "pca:record:83c4dc19-30e1-52d9-8c51-fe830bbb2c78",
+      "sourceRowNumber": 9,
+      "parsedTupleSha256": "b3f5f076ce1d629dd07198843a7267736a88a7b841736eab8713accae61fd1f5"
+    },
+    {
+      "legacyId": "F035",
+      "recordId": "pca:record:94249712-c762-5a28-9740-b31458a13f0b",
+      "sourceRowNumber": 10,
+      "parsedTupleSha256": "ff6ecb6b8f17b6fe88f90f16210b803d11f49039c7d8c9832c7a3b11fb038c57"
+    },
+    {
+      "legacyId": "F049",
+      "recordId": "pca:record:bad6b2b7-6381-5d21-ab85-c8dc1f183de8",
+      "sourceRowNumber": 11,
+      "parsedTupleSha256": "1d3ac57e7e7ebda8e2fd0acfbbebd6999b39c1f53ae2d68c86f47449ff135ccb"
+    },
+    {
+      "legacyId": "F058",
+      "recordId": "pca:record:6fa3212d-007d-5676-bc74-c8518a3436fc",
+      "sourceRowNumber": 12,
+      "parsedTupleSha256": "682254c95c47e8ebf89bae4dcd87fe5f46fbaf016f619e8ac65bf98b84b5069e"
+    },
+    {
+      "legacyId": "F064",
+      "recordId": "pca:record:75f92613-1395-51a4-8408-a484bc525da5",
+      "sourceRowNumber": 13,
+      "parsedTupleSha256": "f1cd243c0cd50852f5428d76515912130ec7e182fd5880c3e5667d502103c838"
+    },
+    {
+      "legacyId": "F069",
+      "recordId": "pca:record:b3cf4d5d-d99f-592d-a0df-18cc2bd1ea7b",
+      "sourceRowNumber": 14,
+      "parsedTupleSha256": "42ec6747ed37d5489562657894d92fc5f2fdc84f23dd3ce94f455936f2082577"
+    },
+    {
+      "legacyId": "F071",
+      "recordId": "pca:record:23538f78-81a7-5162-8d6f-0bcd44b7d61a",
+      "sourceRowNumber": 15,
+      "parsedTupleSha256": "12409d5a46ce418157d3c2eb8f45d659078a85fd6535a5982a57a1d93928173f"
+    },
+    {
+      "legacyId": "F077",
+      "recordId": "pca:record:ad08453b-a9a8-59b5-b8ef-66c09b05988a",
+      "sourceRowNumber": 16,
+      "parsedTupleSha256": "300f0813fffdc368f9e35535506115bdebb9b2c5f7ed220ecd0087f3a92c7981"
+    },
+    {
+      "legacyId": "F084",
+      "recordId": "pca:record:63134468-438e-55b6-a308-0c73332c0cba",
+      "sourceRowNumber": 17,
+      "parsedTupleSha256": "aa7043ead9805b7941b991d2da5b7eee3138c10fa24d1b372f66fd4695e45fb6"
+    },
+    {
+      "legacyId": "F086",
+      "recordId": "pca:record:cdbab46d-65fe-52ac-895c-1df6b77b4590",
+      "sourceRowNumber": 18,
+      "parsedTupleSha256": "d54b92e4720a7ef977463e479d4a50167f392271eb1add5a580b0b605ce6a147"
+    },
+    {
+      "legacyId": "F089",
+      "recordId": "pca:record:7e7d55c3-539c-5bc8-a8a2-ded0c580c440",
+      "sourceRowNumber": 19,
+      "parsedTupleSha256": "0d82038a9f507f4029184d24327d86d3d6a4d35fc13fa80d0650ab245e8902f0"
+    },
+    {
+      "legacyId": "F097",
+      "recordId": "pca:record:b61f3c63-3564-5711-8fdf-da155f7d1e87",
+      "sourceRowNumber": 20,
+      "parsedTupleSha256": "a022ad2585e0cdcee7710607c5a14e7b9988491946fc4c079046ad65210fce4a"
+    },
+    {
+      "legacyId": "F026",
+      "recordId": "pca:record:da98d66e-5ce4-5b07-b66c-9e23256b504d",
+      "sourceRowNumber": 21,
+      "parsedTupleSha256": "0f603a24f7cf3248de8a6e6e41ca9f5f6d62b95a303de5037b1beca6ad0327b9"
+    },
+    {
+      "legacyId": "F095",
+      "recordId": "pca:record:8c0732e3-4d1d-570d-ba29-fbd250dc24b2",
+      "sourceRowNumber": 22,
+      "parsedTupleSha256": "ace50af3bf139bd6a3b0e142093fe4c0d1e8f2066fe4b8050cf80169612fa748"
+    },
+    {
+      "legacyId": "F060",
+      "recordId": "pca:record:cf69ddef-af29-5439-9801-31afc51e098a",
+      "sourceRowNumber": 23,
+      "parsedTupleSha256": "bb05236c4ef5503e9606deb5eccd424a423fe4fb6dca06042e63682fcdfd2796"
+    },
+    {
+      "legacyId": "F059",
+      "recordId": "pca:record:8e3e2fac-20e4-58f3-9422-eed9e1e082cf",
+      "sourceRowNumber": 24,
+      "parsedTupleSha256": "b13b117e45f6d7838f4079ce87b5ab188f96aaf14cf6b088754a164f6b724425"
+    },
+    {
+      "legacyId": "F028",
+      "recordId": "pca:record:fe35f0a3-8918-5d34-8248-a694d28ca219",
+      "sourceRowNumber": 25,
+      "parsedTupleSha256": "8d17f8382bd47b21f41b2a737f49ce4617c58a5b0792c2b6a0fb86d91a88a0e9"
+    },
+    {
+      "legacyId": "F051",
+      "recordId": "pca:record:b093a944-632d-50f6-b8bb-a81b6fb58065",
+      "sourceRowNumber": 26,
+      "parsedTupleSha256": "2abcb832136da2da53661659210fc2ebeabca6a7c577b948744d90051e5f9e5b"
+    },
+    {
+      "legacyId": "F093",
+      "recordId": "pca:record:deb6ef2d-f564-5de9-a0ec-aae1611aaa5d",
+      "sourceRowNumber": 27,
+      "parsedTupleSha256": "5192864483b7e741e5269a7f882da42e90e0e5e16ee03742cad4b58c6f045d84"
+    },
+    {
+      "legacyId": "F087",
+      "recordId": "pca:record:4004982d-d23c-5041-93df-119a2d4f23f5",
+      "sourceRowNumber": 28,
+      "parsedTupleSha256": "32bd8902d06c338faf426b2a05af3ae0f25f246ff5169eb2d00f210761e06821"
+    },
+    {
+      "legacyId": "F083",
+      "recordId": "pca:record:c7289c2c-ae48-5b14-aa25-09be73cc100e",
+      "sourceRowNumber": 29,
+      "parsedTupleSha256": "300b0306dad35d3263d951b059962af02cf96275a8e4d2760574f1acb1588020"
+    },
+    {
+      "legacyId": "F098",
+      "recordId": "pca:record:be5a5c5d-96fc-5e2d-a154-d47b9af2a065",
+      "sourceRowNumber": 30,
+      "parsedTupleSha256": "b747ff4c6042ea6c1d7fe7c45c22bafe92899a78a9d3ac5d7bdad252614b0861"
+    },
+    {
+      "legacyId": "F022",
+      "recordId": "pca:record:e9b72c45-d3c2-5ef1-96a3-2c495a6d12c7",
+      "sourceRowNumber": 31,
+      "parsedTupleSha256": "9fac7b20baba519944670b3dc6a87cc71a567359212688dfd6f81e7db332a5a9"
+    },
+    {
+      "legacyId": "F006",
+      "recordId": "pca:record:4f76eda7-bc16-5c11-baaf-578e076a1133",
+      "sourceRowNumber": 32,
+      "parsedTupleSha256": "c963ff4e376b62cb8f0d383a85037d1abb6034b507e2c235183035d34be1c084"
+    },
+    {
+      "legacyId": "F072",
+      "recordId": "pca:record:f8366a81-556c-5e0a-a5ce-6f335f54fed6",
+      "sourceRowNumber": 33,
+      "parsedTupleSha256": "06c7e3851d8bf53343cba6ac8dfc372ba202e7244db20eb867e1c42ca2b629bf"
+    },
+    {
+      "legacyId": "F094",
+      "recordId": "pca:record:8b78e968-e37c-5f24-8f04-6a9c16594b73",
+      "sourceRowNumber": 34,
+      "parsedTupleSha256": "02e6b2ce7ce76e124dfc81d2df5ea1c3252619ecb0bbe546b7ec7130cd102793"
+    },
+    {
+      "legacyId": "F046",
+      "recordId": "pca:record:c6b701ea-d8f8-5dfa-baa5-d18e5072081c",
+      "sourceRowNumber": 35,
+      "parsedTupleSha256": "66fac60c0af0b074db998a2d8ee49510700b6503b2763412f71b5e5c27d9672a"
+    },
+    {
+      "legacyId": "F010",
+      "recordId": "pca:record:6af5bdb0-9c3d-5a7d-a274-319fc25fea20",
+      "sourceRowNumber": 36,
+      "parsedTupleSha256": "e84ee2b582fbf38be21f026617cb41dc7d5ebf54d738b325cf20a16da7b95a5d"
+    },
+    {
+      "legacyId": "F062",
+      "recordId": "pca:record:811407de-3824-587d-a2ac-c48a271feb62",
+      "sourceRowNumber": 37,
+      "parsedTupleSha256": "55cdb6f5b68478b21134f69ad244d454674a8977b1e3bd93af4b4c00105597cb"
+    },
+    {
+      "legacyId": "F074",
+      "recordId": "pca:record:52ca01c4-eb0e-5104-8e3b-de78ee7b5db1",
+      "sourceRowNumber": 38,
+      "parsedTupleSha256": "64fbf3eea15795a96d3067939c12a23d18948efdb11a62fc706dfb4a400f3dfa"
+    },
+    {
+      "legacyId": "F029",
+      "recordId": "pca:record:5220de73-1d55-57a8-a383-ae684670d1c0",
+      "sourceRowNumber": 39,
+      "parsedTupleSha256": "9d367f01324a58ef12c19b3f3c7e8cceba6c0151225ae4d30169a44d7bf96cd5"
+    },
+    {
+      "legacyId": "F034",
+      "recordId": "pca:record:a7854b78-8fdb-5d54-bd69-dfbb09069cfe",
+      "sourceRowNumber": 40,
+      "parsedTupleSha256": "8d1aadabbf44f238114ab049d63e9e2a2a32433b1f13f98b85f117a3a7df5801"
+    },
+    {
+      "legacyId": "F033",
+      "recordId": "pca:record:430aade9-e456-55a3-a37b-b74fc890fa80",
+      "sourceRowNumber": 41,
+      "parsedTupleSha256": "23ecdfeec6f244e2b531a965cc7debb6c5cc149f954b215b05d8cd9b95fe681a"
+    },
+    {
+      "legacyId": "F039",
+      "recordId": "pca:record:d6420418-3706-5de7-8697-c1f065e97ab5",
+      "sourceRowNumber": 42,
+      "parsedTupleSha256": "5cf45f6118cf6db3d588307f79c55094f7eb0b46fd68deba6d454916417fe2cc"
+    },
+    {
+      "legacyId": "F031",
+      "recordId": "pca:record:269c3f46-53d3-568f-8385-318ac33afe02",
+      "sourceRowNumber": 43,
+      "parsedTupleSha256": "c6a37cb40c2bb13a41f43e6b0b631438a025a7e2cedb7453e8137236453c6740"
+    },
+    {
+      "legacyId": "F055",
+      "recordId": "pca:record:d1ce1763-7659-5790-8e2e-05e77ffdd348",
+      "sourceRowNumber": 44,
+      "parsedTupleSha256": "475fa69e0803c8208aa50080de2caad95eda15fcb360b58a7b80f88eef0d1694"
+    },
+    {
+      "legacyId": "F092",
+      "recordId": "pca:record:a7ed2510-9709-525f-839b-463a131114e7",
+      "sourceRowNumber": 45,
+      "parsedTupleSha256": "8c4aaf0b8d9990bb6fd93a2a0e201eec5569b041fc901502b70adcc9462bf566"
+    },
+    {
+      "legacyId": "F045",
+      "recordId": "pca:record:00799054-82f8-5dd3-b6da-bf93748c339b",
+      "sourceRowNumber": 46,
+      "parsedTupleSha256": "cd97f18a4e3671926bacb573c13073fd2ac0c996a24961f6cd12d0bd9e3ba09a"
+    },
+    {
+      "legacyId": "F008",
+      "recordId": "pca:record:ec58e8e5-c129-5fa5-b9fa-70850568b880",
+      "sourceRowNumber": 47,
+      "parsedTupleSha256": "876a6a87f0bffd6e62b8bce5080e926511aae73c22a728bf83f03809256298f8"
+    },
+    {
+      "legacyId": "F047",
+      "recordId": "pca:record:8ea74d94-c5b6-5e59-a840-27be4bfc6a1e",
+      "sourceRowNumber": 48,
+      "parsedTupleSha256": "349c5c7b8c20c1119a3349b523aa68120c4b3f09f57bea94baaaf41b12cf7857"
+    },
+    {
+      "legacyId": "F079",
+      "recordId": "pca:record:b4538748-147a-56e7-95c4-695056e46431",
+      "sourceRowNumber": 49,
+      "parsedTupleSha256": "948ee6f9ebae69ecf1aeb2d5d80559becc65ab092bea13d58de6bb327b7b51cc"
+    },
+    {
+      "legacyId": "F102",
+      "recordId": "pca:record:9941b4c6-d999-53b3-9b36-67213a6a5a3b",
+      "sourceRowNumber": 50,
+      "parsedTupleSha256": "12220cec47aa82fed40c7fc60049c963912f552660473dc33f146100d3af02f0"
+    },
+    {
+      "legacyId": "F063",
+      "recordId": "pca:record:de9bb880-9a1a-50cd-afbd-03fa365098bc",
+      "sourceRowNumber": 51,
+      "parsedTupleSha256": "4a8968a1cf8ca4c35774d98d2630a58d7e8eaddfb24f05eff227b22f87fbebb2"
+    },
+    {
+      "legacyId": "F103",
+      "recordId": "pca:record:cea11186-c010-5bc3-a861-8eb97bf11ca2",
+      "sourceRowNumber": 52,
+      "parsedTupleSha256": "5135d21333ade046ea886764753651ad5fd96e8afeb13f4c568e5d68d7b24beb"
+    },
+    {
+      "legacyId": "F044",
+      "recordId": "pca:record:21be84cb-9b3f-53f4-996e-264e96870f5a",
+      "sourceRowNumber": 53,
+      "parsedTupleSha256": "e030341a6930445f0fbd1e11c446b49b4b13a9cade3797a49f52803e2c0ee148"
+    },
+    {
+      "legacyId": "F099",
+      "recordId": "pca:record:55806123-9ffd-5d73-92b0-980b0cc1d259",
+      "sourceRowNumber": 54,
+      "parsedTupleSha256": "2391f759c7f430d3bd48973a66995c60f46f72104ae10a564f6f575530564198"
+    },
+    {
+      "legacyId": "F037",
+      "recordId": "pca:record:1aa3bda4-b6a1-5b5b-a273-194b6dfc0b6e",
+      "sourceRowNumber": 55,
+      "parsedTupleSha256": "fee3f6fe793594b32b7b11589ceb69777284eea8c910c819c45a739494b294ec"
+    },
+    {
+      "legacyId": "F073",
+      "recordId": "pca:record:eaf42d90-c60c-562b-ae0f-2636535fc85d",
+      "sourceRowNumber": 56,
+      "parsedTupleSha256": "9b735103b69933085a6d4ff065e3beacf52e52f186e7920cf707f3ed60e200b2"
+    },
+    {
+      "legacyId": "F041",
+      "recordId": "pca:record:96d894d0-720a-5664-9143-411144ef8f75",
+      "sourceRowNumber": 57,
+      "parsedTupleSha256": "d0f9486f587c2fa2288c2facffc6bc18a8248b0e99e197c532668fff139a0477"
+    },
+    {
+      "legacyId": "F013",
+      "recordId": "pca:record:d8cdd38c-9575-5e87-b114-27f994984f28",
+      "sourceRowNumber": 58,
+      "parsedTupleSha256": "7b6f5423ab43bd49026373a7e2ba183dce9d8bebb4c66477ce28ac1d4417a9a3"
+    },
+    {
+      "legacyId": "F075",
+      "recordId": "pca:record:af49e81f-5b02-5c5d-9c69-53d62992e8d4",
+      "sourceRowNumber": 59,
+      "parsedTupleSha256": "833cb6a2dc9952c82cd7568fc042a399e683f791bff640413ba0bbd2ce456e9d"
+    },
+    {
+      "legacyId": "F081",
+      "recordId": "pca:record:dcdd2140-de7c-5c61-aec3-335a1cca0da2",
+      "sourceRowNumber": 60,
+      "parsedTupleSha256": "08dedc5088cee324f23e5c9431ecd8d8700f7804c95e7b975f3b36abe7df3b8e"
+    },
+    {
+      "legacyId": "F108",
+      "recordId": "pca:record:75565f3f-142b-5915-8b99-89b126710601",
+      "sourceRowNumber": 61,
+      "parsedTupleSha256": "2277e85f7bbc2d1292eda54068f3a53a05033d91a2023d95a3209a26dd3d956e"
+    },
+    {
+      "legacyId": "F091",
+      "recordId": "pca:record:622e2eef-3245-5b68-9396-6c2877537374",
+      "sourceRowNumber": 62,
+      "parsedTupleSha256": "f25c80492606926be78336ef4e1d3cf96f5810bcc8c4296871fda8e0678f2383"
+    },
+    {
+      "legacyId": "F011",
+      "recordId": "pca:record:69fd09e3-215f-5d7b-b205-b4211a8d164f",
+      "sourceRowNumber": 63,
+      "parsedTupleSha256": "0f771547df33a2b8a051dca48d09399b5669641313dc5d0dc02775939675ad7f"
+    },
+    {
+      "legacyId": "F004",
+      "recordId": "pca:record:5a4fde29-4414-5d3b-8933-4216fd14c8f9",
+      "sourceRowNumber": 64,
+      "parsedTupleSha256": "22772e169ff4fe33836ed256041b18b705c6999bdf5f7047583e61e13ea2f12e"
+    },
+    {
+      "legacyId": "F052",
+      "recordId": "pca:record:c5e367e0-0691-50f6-ba55-f84e7f2f1c4d",
+      "sourceRowNumber": 65,
+      "parsedTupleSha256": "e5a05e14a21c2cdd8b8bb9f1782bff1e083dd1d8f4e47dd50a5d4a777fe3b83d"
+    },
+    {
+      "legacyId": "F109",
+      "recordId": "pca:record:af3ea5da-1c3d-5aaa-ae71-2d188c0c3c70",
+      "sourceRowNumber": 66,
+      "parsedTupleSha256": "e346d460dd8277684f42dd2d8252a6d6d0d8e2fcce1ac989dd5ace74aec5ac93"
+    },
+    {
+      "legacyId": "F042",
+      "recordId": "pca:record:8689b760-5f8c-5ffb-bd63-7543b402427e",
+      "sourceRowNumber": 67,
+      "parsedTupleSha256": "119de978ce494a5e782a7d779c79a067e79a246271a04667835756080a72799a"
+    },
+    {
+      "legacyId": "F050",
+      "recordId": "pca:record:a244b5ab-67fd-5628-8d63-5a626e6d7e0b",
+      "sourceRowNumber": 68,
+      "parsedTupleSha256": "05ae654a2029b91abbddc9f799c276398225d6c76c8f06d0ebf764dba6723139"
+    },
+    {
+      "legacyId": "F105",
+      "recordId": "pca:record:19948229-e4b8-5ef1-a57d-a8e7d77b79e7",
+      "sourceRowNumber": 69,
+      "parsedTupleSha256": "f1b992bd6f4e5479b5e86b98165ecc55e6a942abfd00d3485f8ab0c87417a580"
+    },
+    {
+      "legacyId": "F101",
+      "recordId": "pca:record:4c9c168d-82ed-5dd9-8d94-2d2c1e8bc06f",
+      "sourceRowNumber": 70,
+      "parsedTupleSha256": "3109891ae9a22341f9fb2ba9114b0950c608ddf6e32473aa93116baeefbacbb0"
+    },
+    {
+      "legacyId": "F053",
+      "recordId": "pca:record:0473980c-2889-5594-84b1-17ba93e49f38",
+      "sourceRowNumber": 71,
+      "parsedTupleSha256": "f213e0381264961029e4ca0800e2c48eef6e5df02a521d4d51353879454867ef"
+    },
+    {
+      "legacyId": "F078",
+      "recordId": "pca:record:d763ccb0-7c84-5854-ae67-404d11bb33b5",
+      "sourceRowNumber": 72,
+      "parsedTupleSha256": "f5883b9adf5307a8d379b74361c364d75ca6946fed780f68dc86bce56af5f277"
+    },
+    {
+      "legacyId": "F076",
+      "recordId": "pca:record:aee5ebdb-60d3-5883-9b7a-7ac07c0c874b",
+      "sourceRowNumber": 73,
+      "parsedTupleSha256": "719659f1d5a4a35df2906cd59531b1fccd2527349964bb0c5c055525975b63d4"
+    },
+    {
+      "legacyId": "F090",
+      "recordId": "pca:record:42a1ec12-bbbf-5730-9c79-0bcb4d9ab57f",
+      "sourceRowNumber": 74,
+      "parsedTupleSha256": "40ef4acbc8c4ba506c59ff040860cf479d916a5c95428d58dc86b043a77450a8"
+    },
+    {
+      "legacyId": "F088",
+      "recordId": "pca:record:1526c779-06a4-5ec9-939a-fd15bbb0acd0",
+      "sourceRowNumber": 75,
+      "parsedTupleSha256": "72f14e64d346589757cd84b13e6c5e6aba7735e6dcaf0119cf662824f343f57b"
+    },
+    {
+      "legacyId": "F024",
+      "recordId": "pca:record:edc6ccf6-5318-59f3-aa5e-2972153b4581",
+      "sourceRowNumber": 76,
+      "parsedTupleSha256": "1bee0d60a40af39428ea60fae577229afffd5b80a96dc2a6cb6f8d71ec3590a6"
+    },
+    {
+      "legacyId": "F021",
+      "recordId": "pca:record:a182ff76-0663-5328-8b93-8155229d7f9d",
+      "sourceRowNumber": 77,
+      "parsedTupleSha256": "a6c80764258561e34f2d28bf0e400cb62fd680e34d4a099887bcbf3eb1211dca"
+    },
+    {
+      "legacyId": "F040",
+      "recordId": "pca:record:a2eb1ffe-36e7-547d-9552-47cba8ada314",
+      "sourceRowNumber": 78,
+      "parsedTupleSha256": "b3d5e73cf4e33de887e83148b7f39afa8bd0933b57264acebc7ea876a39d237c"
+    },
+    {
+      "legacyId": "F038",
+      "recordId": "pca:record:36340c9b-328c-5e15-9da9-c5b46635d37c",
+      "sourceRowNumber": 79,
+      "parsedTupleSha256": "b7241eac277a289ad681adc02b55521a685cf44472804059e0b9b0a5e674728f"
+    },
+    {
+      "legacyId": "F048",
+      "recordId": "pca:record:463cecdb-5d10-55cd-9998-a7d65cae2a6d",
+      "sourceRowNumber": 80,
+      "parsedTupleSha256": "8882e001c890722b2cc5f4cd970ce5733d8ff3a75cd3e7e3b095e1bc822d104e"
+    },
+    {
+      "legacyId": "F054",
+      "recordId": "pca:record:1889d80f-c557-5a2e-bb8f-6d875b5c3e3a",
+      "sourceRowNumber": 81,
+      "parsedTupleSha256": "9c3033d0dae44a463ec4a5e88c1940078607ef787d8e17c3ae9179025d83f470"
+    },
+    {
+      "legacyId": "F043",
+      "recordId": "pca:record:27566260-0df9-59b7-80c1-7dff721a7f89",
+      "sourceRowNumber": 82,
+      "parsedTupleSha256": "2aa2fac7b123db1ef4a2645303a4e0b2690e21d781da3c7f248a59f8d4e64a65"
+    },
+    {
+      "legacyId": "F030",
+      "recordId": "pca:record:ddc2b351-4e4c-586f-ac6e-d434d03acc66",
+      "sourceRowNumber": 83,
+      "parsedTupleSha256": "cd1a3d41f964fa5ed393ead5d6c485345494c9360740cfb1126bddeb36db38c3"
+    },
+    {
+      "legacyId": "F032",
+      "recordId": "pca:record:2ad1fcc2-d479-55a2-9d7c-09ded5231615",
+      "sourceRowNumber": 84,
+      "parsedTupleSha256": "94fda8b9ea2c7acf1ed10dcadc2facb8a1d4f66966190a352cfcebbdbe6ac567"
+    },
+    {
+      "legacyId": "F085",
+      "recordId": "pca:record:d6575126-f7db-5735-b26f-d4c5286139b0",
+      "sourceRowNumber": 85,
+      "parsedTupleSha256": "80331805e8a582d6f17d581705bc407df9600fd57b8a6f0c93575ef9626a8524"
+    },
+    {
+      "legacyId": "F082",
+      "recordId": "pca:record:534b224c-25cc-540f-9cf8-cb9b3296d492",
+      "sourceRowNumber": 86,
+      "parsedTupleSha256": "e4541d0a9178646f3f3f37c6597fda27cfd10780ad9fc1f438c6b8e3ebad4649"
+    },
+    {
+      "legacyId": "F107",
+      "recordId": "pca:record:aad8b399-94f7-5066-b12a-7a9b3ce80cb4",
+      "sourceRowNumber": 87,
+      "parsedTupleSha256": "5b8c1b5c8a26e898f1cc474831620be083d0497225c9c66c7182f0ee6c6296af"
+    },
+    {
+      "legacyId": "F106",
+      "recordId": "pca:record:6dec77eb-377a-5e4f-a4ef-4151cab1c359",
+      "sourceRowNumber": 88,
+      "parsedTupleSha256": "4a59a1143666b12aefb49c73aef295381186e3f820b0a81760429298100a903c"
+    },
+    {
+      "legacyId": "F019",
+      "recordId": "pca:record:247a657b-e9e9-57f5-91e1-a6b23eb66a7e",
+      "sourceRowNumber": 89,
+      "parsedTupleSha256": "17a78c80a8fae4cee39a37fb0d2c68e2dccf121f308de6761f6bbd8aca1ebc93"
+    },
+    {
+      "legacyId": "F018",
+      "recordId": "pca:record:f3714bc2-7286-5715-903a-f67a9f10e71f",
+      "sourceRowNumber": 90,
+      "parsedTupleSha256": "20a26236cd0f691e6c7ce8c5bde387c907200ecc6dd67745d689e9cc11ece835"
+    },
+    {
+      "legacyId": "F002",
+      "recordId": "pca:record:04343675-e6b8-5b3d-8630-a15b5c7f1210",
+      "sourceRowNumber": 91,
+      "parsedTupleSha256": "8c9727d014b1dae4f5143b18655688923197abcbdf9a73559910dce9bfdf651a"
+    },
+    {
+      "legacyId": "F068",
+      "recordId": "pca:record:b0138799-2a7a-5e67-9604-b97890563056",
+      "sourceRowNumber": 92,
+      "parsedTupleSha256": "86ef4ac08f812431e742aca3b0ce0082a2007346fe132f37b5fc011c723d02e2"
+    },
+    {
+      "legacyId": "F070",
+      "recordId": "pca:record:4b92c540-527f-51c4-9719-b6dca8f35dd4",
+      "sourceRowNumber": 93,
+      "parsedTupleSha256": "05b5ed1ca6cc84a04e99a54ffb896f4788639115eaffb994ea98fa213dc65a98"
+    },
+    {
+      "legacyId": "F096",
+      "recordId": "pca:record:623c329b-f43c-5c7e-95be-59646a57b162",
+      "sourceRowNumber": 94,
+      "parsedTupleSha256": "ff21f0d042c9709738760a77b01e593521f364786043196e31d257b264e72228"
+    },
+    {
+      "legacyId": "F057",
+      "recordId": "pca:record:c68990c1-aba2-57f0-bc02-883d8024fbd9",
+      "sourceRowNumber": 95,
+      "parsedTupleSha256": "489287235a8409304484fdab4736b8335ae3ab06d2c9f61ed68af23fa614892d"
+    },
+    {
+      "legacyId": "F005",
+      "recordId": "pca:record:1ee953e5-ac8d-5ab7-8560-27a3d064934b",
+      "sourceRowNumber": 96,
+      "parsedTupleSha256": "fac0f7992819ff3227308890bdbb1b61a150e06f9e5eb4f65943766d5f595e3a"
+    },
+    {
+      "legacyId": "F100",
+      "recordId": "pca:record:cb198c1a-58a9-593a-aa30-73b77fa51526",
+      "sourceRowNumber": 97,
+      "parsedTupleSha256": "4f0376be58e4e85f262ea92aaf17948fd6df89c23af44ce3f078e14acad82ae8"
+    },
+    {
+      "legacyId": "F009",
+      "recordId": "pca:record:611bfb92-d85b-5ddf-9334-45dc022331a7",
+      "sourceRowNumber": 98,
+      "parsedTupleSha256": "078165ee7195e16cb9d449942348d397cc84cbd2fab20615dbb80c4cd575592c"
+    },
+    {
+      "legacyId": "F066",
+      "recordId": "pca:record:c69a2bdd-80e9-524a-84cd-492b63468ea5",
+      "sourceRowNumber": 99,
+      "parsedTupleSha256": "796a571c3c30f647ff365d2aa1ada5ace15e2e8893f3db2734b0edda05a4f495"
+    },
+    {
+      "legacyId": "F067",
+      "recordId": "pca:record:73adb3b7-e8d8-500d-b40b-6c21d5ea30f4",
+      "sourceRowNumber": 100,
+      "parsedTupleSha256": "75847b16db57e851639bba24c3155678982e31e344a4bd2327a70c13181201f7"
+    },
+    {
+      "legacyId": "F065",
+      "recordId": "pca:record:6a96eb04-1d03-5e7b-a743-d2aa570191bf",
+      "sourceRowNumber": 101,
+      "parsedTupleSha256": "9566bf67ca28b5dbf977e37e47cacdc7953a6ac722dc5ee545230f544ffc34b6"
+    },
+    {
+      "legacyId": "F061",
+      "recordId": "pca:record:da9edf16-7694-5321-9812-c5418e374dad",
+      "sourceRowNumber": 102,
+      "parsedTupleSha256": "4d2820a74b578690ed03f3c8c83239e06bf4908f15d55661203c69a927542ded"
+    },
+    {
+      "legacyId": "F036",
+      "recordId": "pca:record:c867d5bc-3a36-591a-beac-6c382d8b43fd",
+      "sourceRowNumber": 103,
+      "parsedTupleSha256": "25592f67f608b35976f57982869bd4b5f8579ccf0e66f6552f1e9924521fafa3"
+    },
+    {
+      "legacyId": "F056",
+      "recordId": "pca:record:6b298cdd-6f19-565a-a5ea-14a607e0f165",
+      "sourceRowNumber": 104,
+      "parsedTupleSha256": "0d5f7d1a9efc7f1a0d52561a341ad5ed420cd3f1a00ec0676df5720d1ef88a1e"
+    },
+    {
+      "legacyId": "F080",
+      "recordId": "pca:record:023a62d6-0189-5b38-8abe-77412c432aab",
+      "sourceRowNumber": 105,
+      "parsedTupleSha256": "842d1bed48246d0a1177a10b24623a7faf430c25dfebe37447afb063cd1ed48c"
+    },
+    {
+      "legacyId": "F104",
+      "recordId": "pca:record:a66cbd65-b08a-5c72-a07e-3618dcbf7a95",
+      "sourceRowNumber": 106,
+      "parsedTupleSha256": "f84902a96e42640b0d58256dea3767e673b4dd039a83bbfe13e72a1c4f8198d7"
+    },
+    {
+      "legacyId": "F014",
+      "recordId": "pca:record:83ba47ed-03cb-5fea-86c0-c60a481b0d21",
+      "sourceRowNumber": 107,
+      "parsedTupleSha256": "eb25fff951562f962a3591601058f93d1cbfc35014aa6f90464b36a9084549ee"
+    },
+    {
+      "legacyId": "F111",
+      "recordId": "pca:record:774eeec0-52d5-5c1d-a937-daa7bf745434",
+      "sourceRowNumber": 108,
+      "parsedTupleSha256": "9db494ca836957cd29ad1ff709097c1b78e13cd395aa75820569c7a51e770722"
+    },
+    {
+      "legacyId": "F112",
+      "recordId": "pca:record:295e9db5-a095-575c-a5dd-624f017ce851",
+      "sourceRowNumber": 109,
+      "parsedTupleSha256": "4717c3675a76de23e954c717bad4223caabe9fc30837b7a8557609a2b6fcc5d2"
+    },
+    {
+      "legacyId": "F110",
+      "recordId": "pca:record:c5d5270f-84b2-5540-8882-8d4afe4278d2",
+      "sourceRowNumber": 110,
+      "parsedTupleSha256": "06f2b4f8f81beea7b3f773ac149712f354e5178ff881e3637db0acd450af74a6"
+    },
+    {
+      "legacyId": "F015",
+      "recordId": "pca:record:7b4c3852-0fc7-50a8-b906-ada76cae1efe",
+      "sourceRowNumber": 111,
+      "parsedTupleSha256": "40598900b2c0370179b35d03be5881299fb47924016915c58cab5ec01dbe451b"
+    },
+    {
+      "legacyId": "F017",
+      "recordId": "pca:record:b0097db2-a1c9-51aa-a83e-d93e3ec2e227",
+      "sourceRowNumber": 112,
+      "parsedTupleSha256": "3967c15042b6b0b0a764f393264a7da1025e2786eaa40f797c6b2a7a7b406008"
+    },
+    {
+      "legacyId": "F016",
+      "recordId": "pca:record:f8171b93-14c7-56c6-bdf0-7591cb9bec5e",
+      "sourceRowNumber": 113,
+      "parsedTupleSha256": "b93c4ba8827d528880aeb073354808a92343f7d80a2c4a5e02ebc424326d3767"
+    }
+  ]
+}

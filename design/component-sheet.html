@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component sheet — Punjab Care Access Map (Phase 1)</title>
+<!-- Loads the REAL generated stylesheet so this sheet cannot drift from the site. -->
+<link rel="stylesheet" href="../public/app.css">
+<style>
+  /* Sheet scaffolding only. Not shipped to the public site. */
+  body { padding: 32px; max-width: 1080px; }
+  .cs-section { margin: 0 0 40px; }
+  .cs-section > h2 { font-size: 22px; font-weight: 500; margin: 0 0 4px; }
+  .cs-note { color: #59645f; font-size: 15px; margin: 0 0 16px; }
+  .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+  .cs-swatch { border: 1px solid #dde2e0; border-radius: 10px; overflow: hidden; }
+  .cs-chip { height: 64px; }
+  .cs-swatch p { margin: 0; padding: 8px 10px; font-size: 14px; background: #fff; }
+  .cs-swatch code { font-size: 13px; color: #59645f; }
+  .cs-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .cs-panel { background: #fff; border: 1px solid #dde2e0; border-radius: 14px; padding: 20px; max-width: 420px; }
+  .cs-rule { border: 0; border-top: 1px solid #dde2e0; margin: 40px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #dde2e0; }
+  th { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1 style="font-size:30px;font-weight:500;margin:0 0 6px;">Component sheet — Phase 1</h1>
+<p class="cs-note">
+  Visual-review checkpoint 1 (handoff §16.3). Every style below is pulled from the
+  generated <code>public/app.css</code>, so what you see is what the site renders.
+  Approve typography and colour balance here before Phase 2 builds the layout.
+</p>
+
+<hr class="cs-rule">
+
+<section class="cs-section">
+  <h2>Typography scale</h2>
+  <p class="cs-note">Rem-based so browser text resizing works. 14px is the hard floor,
+  enforced by <code>validate_p0.py</code>.</p>
+  <table>
+    <tr><th>Token</th><th>Size</th><th>Used for</th><th>Sample</th></tr>
+    <tr><td><code>--text-title</code></td><td>26–30px</td><td>Project title</td><td style="font-size:clamp(1.625rem,1.35rem + 0.65vw,1.875rem);font-weight:500;">Punjab Care Access Map</td></tr>
+    <tr><td><code>--text-section</code></td><td>22px</td><td>Section titles</td><td style="font-size:1.375rem;font-weight:500;">Explore the service landscape</td></tr>
+    <tr><td><code>--text-card</code></td><td>18px</td><td>Service name</td><td style="font-size:1.125rem;font-weight:500;">Model Drug De-Addiction Centre</td></tr>
+    <tr><td><code>--text-base</code></td><td>16px</td><td>Body, control labels</td><td style="font-size:1rem;">District</td></tr>
+    <tr><td><code>--text-sm</code></td><td>15px</td><td>Secondary detail</td><td style="font-size:0.9375rem;">Reported district: Amritsar</td></tr>
+    <tr><td><code>--text-xs</code></td><td>14px</td><td>Smallest utility text</td><td style="font-size:0.875rem;">Telephone not available in the supplied source.</td></tr>
+  </table>
+</section>
+
+<section class="cs-section">
+  <h2>Palette</h2>
+  <p class="cs-note">Green is the single primary action accent. Mint and lavender are
+  grouping tints only — they never signal verification or status.</p>
+  <div class="cs-grid">
+    <div class="cs-swatch"><div class="cs-chip" style="background:#f3f4f8"></div><p>Page canvas<br><code>--color-page #F3F4F8</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#ffffff;border-bottom:1px solid #dde2e0"></div><p>Surface<br><code>--color-surface #FFFFFF</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#ebecf1"></div><p>Secondary surface<br><code>--color-surface-secondary #EBECF1</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#202522"></div><p>Primary text · 15.57:1<br><code>--color-text #202522</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#59645f"></div><p>Secondary text · 6.15:1<br><code>--color-text-secondary #59645F</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#246b52"></div><p>Primary action · 6.36:1<br><code>--color-primary #246B52</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#e3f2ec"></div><p>Mint tint<br><code>--color-mint #E3F2EC</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#eee9fa"></div><p>Lavender tint<br><code>--color-lavender #EEE9FA</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#738078"></div><p>Control border · 4.13:1<br><code>--color-control-border #738078</code></p></div>
+    <div class="cs-swatch"><div class="cs-chip" style="background:#073b9b"></div><p>Focus ring · 9.96:1<br><code>--color-focus #073B9B</code> (deviation)</p></div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <h2>Data-encoding colours</h2>
+  <p class="cs-note">A different job from action colour. Always paired with a text
+  label, so colour is never the sole carrier of meaning.</p>
+  <div class="cs-row">
+    <span class="pill gov">Government claim</span>
+    <span class="pill ngo">NGO / trust claim</span>
+    <span class="pill private">Private claim</span>
+    <span class="pill helpline">Helpline</span>
+  </div>
+</section>
+
+<hr class="cs-rule">
+
+<section class="cs-section">
+  <h2>Inputs</h2>
+  <div class="cs-panel">
+    <div class="section-label">District</div>
+    <select class="type-select">
+      <option>All Punjab districts</option><option>Amritsar</option>
+    </select>
+    <div class="search-wrap" style="margin-top:16px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      <input type="search" placeholder="Search name, district, address, or source term…">
+    </div>
+    <p class="cs-note" style="margin-top:12px;font-size:14px;">Tab into these to check the focus ring.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <h2>Buttons and filter states</h2>
+  <div class="cs-row">
+    <button class="small-action">Clear filters</button>
+    <button class="small-action">Export CSV</button>
+    <button class="small-action">Print directory</button>
+  </div>
+  <div class="cs-panel">
+    <div class="section-label">Source ownership claim</div>
+    <div class="category-grid">
+      <button type="button" class="filter-button active"><span class="swatch gov"></span>Government claim<span class="filter-count">78</span></button>
+      <button type="button" class="filter-button"><span class="swatch ngo"></span>NGO / trust claim<span class="filter-count">11</span></button>
+    </div>
+    <p class="cs-note" style="margin-top:12px;font-size:14px;">
+      Top = selected, bottom = unselected. The "all pressed means no filter" ambiguity
+      (UX-03) is a Phase 2 fix, not a styling change.
+    </p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <h2>Summary strip</h2>
+  <p class="cs-note">A compact factual strip, not KPI cards (§3.1/§5.5).</p>
+  <div class="metric-row" style="justify-content:flex-start;">
+    <div class="metric"><strong>112</strong><span>visible listings</span></div>
+    <div class="metric"><strong>22</strong><span>district groups</span></div>
+    <div class="metric"><strong>4</strong><span>coverage records</span></div>
+  </div>
+</section>
+
+<hr class="cs-rule">
+
+<section class="cs-section">
+  <h2>Service card</h2>
+  <p class="cs-note">Name at 18px is the primary decision object. Role, district and
+  uncertainty are all readable without opening details.</p>
+  <div class="cs-panel" style="padding:0;">
+    <div class="facility">
+      <div class="facility-top">
+        <span class="swatch gov" style="margin-top:7px;"></span>
+        <h3 class="facility-name">Swami Vivekanand Drug De-addiction Treatment Centre</h3>
+      </div>
+      <div class="facility-meta"><span class="pill gov">Government claim</span> Reported district: Amritsar</div>
+      <p class="p0-card-role">Source site / provider record</p>
+      <p class="p1-card-line">Source terms mentioned: Model centre (source term)</p>
+      <p class="p1-card-line">Telephone not available in the supplied source.</p>
+      <p class="p1-card-caveat">Named institution text supplied; location is not verified or mapped.</p>
+      <span class="p1-card-action">View details</span>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <h2>Notice</h2>
+  <p class="p0-map-notice">Map shows record counts grouped by reported district or coverage scope—not facility locations.</p>
+  <div class="active-context visible" style="max-width:420px;">
+    <span>Showing 6 listings in Bathinda</span><button type="button">Clear district</button>
+  </div>
+</section>
+
+<section class="cs-section">
+  <h2>Legend</h2>
+  <p class="cs-note">Now on an opaque surface. The state-aware river row (UX-09) is a
+  Phase 2 behaviour fix.</p>
+  <div class="legend" style="position:static;display:inline-block;">
+    <div class="legend-title">Map symbol</div>
+    <div class="legend-row"><span class="legend-dot district-count-dot"></span>District-group record count</div>
+    <div class="legend-row legend-explanation">Individual facility locations are not mapped.</div>
+  </div>
+</section>
+
+<hr class="cs-rule">
+<p class="cs-note">
+  Not in this phase: workspace layout, "Type of help" control, public microcopy
+  rewrite, state-aware legend, export context. Those are Phases 2–4.
+</p>
+
+</body>
+</html>

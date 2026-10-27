@@ -9,4 +9,5 @@
 - [x] Restore the supplied reference design: a clean white-and-green interface with a dark-green header, rounded filter and map cards, sans-serif labels, blue/orange/purple provider marks, and the original responsive sidebar/map composition.
 - [x] Remove the decorative grid and degree-boundary annotations while retaining the map’s interactive district, cultural-region, and river layers.
 - [x] Add live map exports: PNG and one-page PDF downloads reflect the current filtered listings and visible layer state, and include an export map key.
+- [x] Add an exhaustive project overview that documents the delivered map, the user-supplied CSV transformation process, data model, derived classifications, map layers, update workflow, exports, hosting preparation, and limitations.
 - [ ] Publish the validated static build and confirm the durable public website URL.

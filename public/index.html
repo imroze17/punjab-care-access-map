@@ -119,10 +119,10 @@
   html, body { background:var(--paper); color:var(--ink); }
   header { background:#3a2c21; border-bottom:4px double #c9b18a; box-shadow:none; padding:14px clamp(18px,3vw,42px); }
   .brand-mark { border-radius:0; border-color:#ddcaa6; color:#eadabc; background:transparent; }
-  .brand h1, .map-title h2, .legend-title, .section-label { font-family:Georgia, 'Times New Roman', serif; }
+  .brand h1, .map-title h2, .legend-title, .section-label { font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; }
   .brand h1 { font-size:1.2rem; letter-spacing:.02em; }
   .brand p { color:#dfcfad; }
-  .header-stat { border-radius:0; border-color:#bba57f; color:#eadabc; font-family:Georgia, 'Times New Roman', serif; }
+  .header-stat { border-radius:0; border-color:#bba57f; color:#eadabc; font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; }
   .workspace { background:#eee3c8; }
   aside { background:#f5ecd6; border-right:1px solid #8f7d66; }
   .section-label { color:#594837; letter-spacing:.11em; font-weight:700; }
@@ -153,28 +153,34 @@
   .map-title h2 { color:#3b2a20; font-size:1.32rem; letter-spacing:.015em; }
   .map-title p, .footer-note { color:#695d4c; }
   .metric { background:#f8f0dc; border-radius:1px; border-color:#aa9679; box-shadow:none; }
-  .metric strong { color:#853f30; font-family:Georgia, 'Times New Roman', serif; font-size:1.08rem; }.metric span { color:#746451; }
+  .metric strong { color:#853f30; font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; font-size:1.08rem; }.metric span { color:#746451; }
   .map-shell { border-radius:0; border:1px solid #403426; background:#eadfbe; box-shadow:0 2px 10px rgba(62,43,22,.12); }
   .map-shell::before { content:""; position:absolute; z-index:5; inset:7px; border:1px solid #806e58; pointer-events:none; }
   #map { background-color:#efe3c6; background-image:radial-gradient(ellipse at 20% 12%,rgba(255,252,235,.64),transparent 37%),radial-gradient(ellipse at 80% 85%,rgba(192,161,113,.14),transparent 43%),linear-gradient(118deg,rgba(255,255,255,.12),rgba(100,75,42,.04)); }
   .map-actions { right:19px; bottom:21px; top:auto; z-index:7; grid-auto-flow:column; }
   .map-actions button { border-radius:1px; border-color:#745d49; background:#f8efd9; color:#4b3527; box-shadow:none; }
   .map-actions button:hover { background:#ead4b0; }
-  .map-note { left:20px; bottom:20px; border-radius:1px; border-color:#9d876a; background:rgba(250,242,220,.95); color:#594b3a; box-shadow:none; font-family:Georgia, 'Times New Roman', serif; }
+  .map-note { left:20px; bottom:20px; border-radius:1px; border-color:#9d876a; background:rgba(250,242,220,.95); color:#594b3a; box-shadow:none; font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; }
   .legend { right:20px; top:20px; bottom:auto; border-radius:1px; border-color:#7e6a55; background:rgba(249,240,217,.95); color:#49382a; box-shadow:none; min-width:145px; z-index:6; }
   .legend-title { color:#49382a; font-size:.7rem; letter-spacing:.11em; }
   .key-rule { border-top:1px solid #a99071; margin:7px 0; }
   .key-symbol { width:10px; height:10px; display:inline-block; border:1px solid #332a20; }
   .key-government { background:#9b4838; }.key-ngo { background:#c47736; border-radius:50%; }.key-private { background:#765c6a; transform:rotate(45deg); margin:0 2px; }.key-helpline { background:#3d6670; clip-path:polygon(50% 0,100% 100%,0 100%); border:0; }
   .key-line { width:14px; height:0; border-top:2px solid #657f8c; }.key-boundary { width:14px; height:0; border-top:1px solid #514333; }
-  .atlas-grid { fill:url(#atlasGrid); pointer-events:none; opacity:.34; }
-  .atlas-outer-frame { fill:none; stroke:#403426; stroke-width:1.6; vector-effect:non-scaling-stroke; }.atlas-inner-frame { fill:none; stroke:#806e58; stroke-width:.8; vector-effect:non-scaling-stroke; }.atlas-tick { stroke:#675541; stroke-width:1; }.atlas-coordinate { fill:#554535; font-family:Georgia, 'Times New Roman', serif; font-size:8px; letter-spacing:.03em; }
   .district { fill:#f7eed9; fill-opacity:.73; stroke:#514333; stroke-width:1; }.district:hover { stroke:#6e3c2c; stroke-width:1.7; }.district.active-district { fill:#dfbd79; fill-opacity:.54; stroke:#4a2d22; stroke-width:2; }
-  .region-wash { opacity:.12; }.river { stroke:#657f8c; stroke-width:1.65; opacity:.9; }.river-label, .region-label, .district-label { font-family:Georgia, 'Times New Roman', serif; stroke:#f4e8cc; }.river-label { fill:#466d7c; font-size:13px; font-style:italic; font-weight:700; stroke-width:4.5px; }.region-label { fill:#554436; font-size:15px; letter-spacing:.12em; stroke-width:5px; opacity:.7; }.district-label { fill:#44372b; font-size:10px; font-weight:700; stroke-width:3.5px; }
+  .region-wash { opacity:.12; }.river { stroke:#657f8c; stroke-width:1.65; opacity:.9; }.river-label, .region-label, .district-label { font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; stroke:#f4e8cc; }.river-label { fill:#466d7c; font-size:13px; font-style:italic; font-weight:700; stroke-width:4.5px; }.region-label { fill:#554436; font-size:15px; letter-spacing:.12em; stroke-width:5px; opacity:.7; }.district-label { fill:#44372b; font-size:10px; font-weight:700; stroke-width:3.5px; }
   .facility-marker { stroke:#332a20; stroke-width:1.15; vector-effect:non-scaling-stroke; filter:none; }.facility-marker:hover, .facility-marker.selected-marker, .facility-marker:focus-visible { stroke:#f6e7ca; stroke-width:3.2; outline:none; }.symbol-helpline { stroke:#efe0c2; stroke-width:1.1; }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto!important; transition:none!important; } }
-  @media (max-width:720px) { .map-shell::before { inset:5px; }.legend { top:auto; right:13px; bottom:13px; transform:scale(.85); transform-origin:bottom right; }.map-actions { right:13px; bottom:14px; grid-auto-flow:row; }.map-note { left:13px; bottom:13px; max-width:220px; }.atlas-coordinate { font-size:7px; } }
+  @media (max-width:720px) { .map-shell::before { inset:5px; }.legend { top:auto; right:13px; bottom:13px; transform:scale(.85); transform-origin:bottom right; }.map-actions { right:13px; bottom:14px; grid-auto-flow:row; }.map-note { left:13px; bottom:13px; max-width:220px; } }
   /* ATLAS_RESTYLE_END */
+
+  /* EXPORT_REFINEMENT_START */
+  .map-export { display:flex; align-items:center; justify-content:flex-end; gap:6px; margin-top:-5px; }
+  .map-export span { font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; color:#5b4736; font-size:.72rem; letter-spacing:.11em; font-weight:700; margin-right:3px; }
+  .map-export button { border:1px solid #7d6048; border-radius:1px; background:#f7ecd5; color:#493426; padding:5px 9px; font-family:Garamond, 'EB Garamond', 'Cormorant Garamond', 'Times New Roman', serif; font-size:.78rem; font-weight:700; letter-spacing:.06em; }
+  .map-export button:hover:not(:disabled) { background:#ead4ad; }.map-export button:disabled { opacity:.65; cursor:wait; }
+  @media (max-width:720px) { .map-export { justify-content:flex-start; margin-top:-2px; } }
+  /* EXPORT_REFINEMENT_END */
 </style>
 </head>
 <body>
@@ -218,10 +224,11 @@
     </aside>
     <main>
       <div class="map-topline"><div class="map-title"><h2>Punjab care &amp; recovery index</h2><p>Use the service marks, district boundaries, and river lines to navigate the supplied listings.</p></div><div class="metric-row"><div class="metric"><strong id="visibleCount">58</strong><span>visible listings</span></div><div class="metric"><strong id="visibleDistricts">22</strong><span>areas indexed</span></div><div class="metric"><strong id="visibleRegions">4</strong><span>cultural regions</span></div></div></div>
+      <div class="map-export" role="group" aria-label="Download the map"><span>MAP EXPORT</span><button id="exportPng" type="button">PNG</button><button id="exportPdf" type="button">PDF</button></div>
       <div class="map-shell">
-        <svg id="map" viewBox="0 0 1040 850" role="img" aria-label="Atlas map of Punjab, India showing treatment, recovery, OOAT, methadone, rehabilitation, and referral records with districts, cultural regions, and major rivers"><defs><pattern id="atlasGrid" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M 72 0 L 0 0 0 72" fill="none" stroke="#806e58" stroke-width="0.8" opacity="0.36"/></pattern></defs><g id="atlasFrame" aria-hidden="true"></g><g id="viewport"><g id="gridGroup"></g><g id="regionGroup"></g><g id="districtGroup"></g><g id="riverGroup"></g><g id="riverLabelGroup"></g><g id="districtLabelGroup"></g><g id="regionLabelGroup"></g><g id="markerGroup"></g></g></svg>
+        <svg id="map" viewBox="0 0 1040 850" role="img" aria-label="Atlas map of Punjab, India showing treatment, recovery, OOAT, methadone, rehabilitation, and referral records with districts, cultural regions, and major rivers"><g id="viewport"><g id="regionGroup"></g><g id="districtGroup"></g><g id="riverGroup"></g><g id="riverLabelGroup"></g><g id="districtLabelGroup"></g><g id="regionLabelGroup"></g><g id="markerGroup"></g></g></svg>
         <div class="map-actions" aria-label="Map controls"><button id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button><button id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button><button id="resetMap" title="Reset map view" aria-label="Reset map view">↺</button></div>
-        <div class="map-note">NOTE · Marks are display anchors, not rooftop geocodes. Consult the listed address or contact before travel. The reference grid is ornamental, not a survey coordinate system.</div>
+      <div class="map-note">NOTE · Marks are display anchors, not rooftop geocodes. Consult the listed address or contact before travel.</div>
         <div class="legend" aria-label="Map key"><div class="legend-title">Care access key</div><div class="key-rule"></div><div class="legend-row"><span class="key-symbol key-government"></span>Government</div><div class="legend-row"><span class="key-symbol key-ngo"></span>NGO / Trust</div><div class="legend-row"><span class="key-symbol key-private"></span>Private</div><div class="legend-row"><span class="key-symbol key-helpline"></span>Helpline / Office</div><div class="key-rule"></div><div class="legend-row"><span class="key-line"></span>Major river</div><div class="legend-row"><span class="key-boundary"></span>District boundary</div></div>
       <div class="footer-note"><strong>Atlas notes:</strong> The supplied updated CSV contributes 112 entries. District geometry: LGD Districts (2024), filtered to Punjab, via <a href="https://bharatlas.com/view/lgd_districts" target="_blank" rel="noopener">Bharat Atlas</a> (CC0-1.0 / CC-BY-4.0). Majha, Doaba, Malwa, and Puadh are district-level cultural wayfinding overlays, not official administrative boundaries. River traces are schematic orientation lines. Facility details are from the supplied list; records may need independent confirmation.</div>
     </main>
@@ -253,16 +260,7 @@ function project(lat, lon) { return [bounds.offsetX+(lon-bounds.minLon)*Math.cos
 function pathRing(ring) { return ring.map((p,i)=>{ const [x,y]=project(p[1],p[0]); return `${i?'L':'M'}${x.toFixed(1)},${y.toFixed(1)}`; }).join(' ')+'Z'; }
 function pathFor(geometry) { const polygons = geometry.type==='Polygon' ? [geometry.coordinates] : geometry.coordinates; return polygons.map(poly=>poly.map(pathRing).join(' ')).join(' '); }
 function svg(tag, attrs={}) { const el=document.createElementNS(NS,tag); Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v)); return el; }
-function createAtlasFrame() {
-  const frame=document.getElementById('atlasFrame');
-  frame.append(svg('rect',{x:12,y:12,width:W-24,height:H-24,class:'atlas-outer-frame'}));
-  frame.append(svg('rect',{x:21,y:21,width:W-42,height:H-42,class:'atlas-inner-frame'}));
-  const cols=5, rows=5;
-  for(let i=0;i<=cols;i++){const x=42+i*(W-84)/cols;const lon=bounds.minLon+(bounds.maxLon-bounds.minLon)*i/cols;const tick=svg('line',{x1:x,y1:21,x2:x,y2:29,class:'atlas-tick'});frame.append(tick);const top=svg('text',{x,y:19,class:'atlas-coordinate','text-anchor':'middle'});top.textContent=`${lon.toFixed(1)}°E`;frame.append(top);const bottom=svg('text',{x,y:H-10,class:'atlas-coordinate','text-anchor':'middle'});bottom.textContent=`${lon.toFixed(1)}°E`;frame.append(bottom);}
-  for(let i=0;i<=rows;i++){const y=42+i*(H-84)/rows;const lat=bounds.maxLat-(bounds.maxLat-bounds.minLat)*i/rows;frame.append(svg('line',{x1:21,y1:y,x2:29,y2:y,class:'atlas-tick'}));const left=svg('text',{x:18,y:y+3,class:'atlas-coordinate','text-anchor':'end'});left.textContent=`${lat.toFixed(1)}°N`;frame.append(left);const right=svg('text',{x:W-18,y:y+3,class:'atlas-coordinate','text-anchor':'start'});right.textContent=`${lat.toFixed(1)}°N`;frame.append(right);}
-}
 function createMap() {
-  const gg=document.getElementById('gridGroup'); gg.append(svg('rect',{x:27,y:27,width:W-54,height:H-54,class:'atlas-grid'}));
   const dg=document.getElementById('districtGroup'), rg=document.getElementById('regionGroup');
   districtGeo.features.forEach(f=>{
     const p=pathFor(f.geometry), n=f.properties.name, r=f.properties.region;
@@ -304,6 +302,22 @@ function renderContext(){const box=document.getElementById('activeContext');if(s
 function renderSelection(){const box=document.getElementById('selection');if(!state.selectedFacility){box.classList.remove('visible');box.innerHTML='';return;}const f=facilities.find(x=>x.id===state.selectedFacility);if(!f){box.classList.remove('visible');return;}const contact=f.Contact;box.innerHTML=`<div class="selection-heading"><div><span class="pill ${categoryClass(f.category)}">${esc(f.category)}</span><h2 style="margin-top:7px">${esc(f.Name)}</h2></div><button class="close-selection" aria-label="Close selected listing">×</button></div><p>${esc(f.mapDistrict)} · ${esc(f.region)}<br>${esc(f.Type)}</p><p class="address">${esc(f.Address)}</p>${contact?`<p>Contact: <a class="contact-link" href="tel:${esc(contact.replace(/[^+0-9]/g,''))}">${esc(contact)}</a></p>`:''}<p>${esc(f.Remarks.replace(/\[reference:\d+\]/g,''))}</p>`;box.classList.add('visible');box.querySelector('.close-selection').addEventListener('click',()=>{state.selectedFacility=null;render();});}
 function selectFacility(id){const f=facilities.find(x=>x.id===id);state.selectedFacility=id; if(state.selectedDistrict&&state.selectedDistrict!==f.mapDistrict)state.selectedDistrict=null;render(); document.getElementById('selection').scrollIntoView({behavior:'smooth',block:'nearest'});}
 function focusDistrict(name){state.selectedDistrict=state.selectedDistrict===name?null:name;state.selectedFacility=null;render();}
+function downloadBlob(blob, filename) { const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),500); }
+function exportStyleText() { return Array.from(document.querySelectorAll('style')).map(style=>style.textContent).join('\n'); }
+function makeExportSvg() {
+  const copy=document.getElementById('map').cloneNode(true); copy.setAttribute('xmlns',NS);copy.setAttribute('width','1040');copy.setAttribute('height','850');copy.setAttribute('style','background:#efe3c6');
+  const style=document.createElementNS(NS,'style');style.textContent=exportStyleText();copy.insertBefore(style,copy.firstChild);
+  const key=svg('g',{id:'exportKey','aria-hidden':'true'});key.append(svg('rect',{x:816,y:34,width:190,height:164,fill:'#f8efd9',stroke:'#6b5846','stroke-width':'1'}));
+  const title=svg('text',{x:829,y:56,fill:'#443527','font-family':"Garamond, 'EB Garamond', serif",'font-size':'14','font-weight':'700','letter-spacing':'.9'});title.textContent='CARE ACCESS KEY';key.append(title);
+  const marks=[['Government','#9b4838','square'],['NGO / Trust','#c47736','circle'],['Private','#765c6a','diamond'],['Helpline / Office','#3d6670','triangle']];
+  marks.forEach(([label,color,shape],i)=>{const y=78+i*22;if(shape==='square')key.append(svg('rect',{x:832,y:y-6,width:10,height:10,fill:color,stroke:'#332a20'}));else if(shape==='circle')key.append(svg('circle',{cx:837,cy:y-1,r:5,fill:color,stroke:'#332a20'}));else if(shape==='diamond')key.append(svg('rect',{x:833,y:y-5,width:9,height:9,fill:color,stroke:'#332a20',transform:`rotate(45 837.5 ${y-.5})`}));else key.append(svg('path',{d:`M 837 ${y-7} L 843 ${y+4} L 831 ${y+4} Z`,fill:color,stroke:'#332a20'}));const text=svg('text',{x:852,y:y+3,fill:'#49382a','font-family':"Garamond, 'EB Garamond', serif",'font-size':'13'});text.textContent=label;key.append(text);});
+  key.append(svg('line',{x1:830,y1:169,x2:845,y2:169,stroke:'#657f8c','stroke-width':'2'}));const river=svg('text',{x:852,y:173,fill:'#49382a','font-family':"Garamond, 'EB Garamond', serif",'font-size':'13'});river.textContent='Major river';key.append(river);copy.append(key);return copy;
+}
+async function exportMapCanvas() { const svg=makeExportSvg();const text=new XMLSerializer().serializeToString(svg);const url=URL.createObjectURL(new Blob([text],{type:'image/svg+xml;charset=utf-8'}));const image=new Image();await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=url;});const scale=2;const canvas=document.createElement('canvas');canvas.width=1040*scale;canvas.height=850*scale;const context=canvas.getContext('2d');context.fillStyle='#efe3c6';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);return canvas; }
+async function downloadMapPng() { const button=document.getElementById('exportPng');button.disabled=true;button.textContent='WORKING…';try{const canvas=await exportMapCanvas();const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));downloadBlob(blob,'punjab-care-access-atlas.png');}catch(error){console.error(error);alert('The PNG map could not be created. Please try again.');}finally{button.disabled=false;button.textContent='PNG';} }
+function bytesFromDataUrl(dataUrl) { const bytes=atob(dataUrl.split(',')[1]);return Uint8Array.from(bytes,char=>char.charCodeAt(0)); }
+function pdfBlobFromJpeg(jpeg,width,height) { const encoder=new TextEncoder(),parts=[],offsets=[0];let length=0;const add=value=>{const bytes=typeof value==='string'?encoder.encode(value):value;parts.push(bytes);length+=bytes.length;};const object=(number,body)=>{offsets[number]=length;add(`${number} 0 obj\n${body}\nendobj\n`);};add('%PDF-1.4\n');const pageWidth=792,pageHeight=Math.round(pageWidth*height/width);const content=`q\n${pageWidth} 0 0 ${pageHeight} 0 0 cm\n/Im0 Do\nQ\n`;object(1,'<< /Type /Catalog /Pages 2 0 R >>');object(2,'<< /Type /Pages /Kids [3 0 R] /Count 1 >>');object(3,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /XObject << /Im0 5 0 R >> >> /Contents 4 0 R >>`);object(4,`<< /Length ${encoder.encode(content).length} >>\nstream\n${content}endstream`);offsets[5]=length;add(`5 0 obj\n<< /Type /XObject /Subtype /Image /Width ${width} /Height ${height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>\nstream\n`);add(jpeg);add('\nendstream\nendobj\n');const xref=length;add('xref\n0 6\n0000000000 65535 f \n');for(let i=1;i<=5;i++)add(`${String(offsets[i]).padStart(10,'0')} 00000 n \n`);add(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);return new Blob(parts,{type:'application/pdf'}); }
+async function downloadMapPdf() { const button=document.getElementById('exportPdf');button.disabled=true;button.textContent='WORKING…';try{const canvas=await exportMapCanvas();const jpeg=bytesFromDataUrl(canvas.toDataURL('image/jpeg',.92));downloadBlob(pdfBlobFromJpeg(jpeg,canvas.width,canvas.height),'punjab-care-access-atlas.pdf');}catch(error){console.error(error);alert('The PDF map could not be created. Please try again.');}finally{button.disabled=false;button.textContent='PDF';} }
 function setupControls(){
  document.querySelectorAll('.filter-button').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.category;state.categories.has(c)?state.categories.delete(c):state.categories.add(c);b.classList.toggle('active',state.categories.has(c));b.setAttribute('aria-pressed',state.categories.has(c));render();}));
  const types=[...new Set(facilities.map(f=>f.Type))].sort();const sel=document.getElementById('typeSelect');types.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.append(o);});sel.addEventListener('change',()=>{state.detailType=sel.value;render();});
@@ -311,14 +325,13 @@ function setupControls(){
  const binds=[['districtLayer','showDistricts'],['districtLabels','showDistrictLabels'],['regionLayer','showRegions'],['regionLabels','showRegionLabels'],['riverLayer','showRivers'],['riverLabels','showRiverLabels']];binds.forEach(([id,key])=>document.getElementById(id).addEventListener('change',e=>{state[key]=e.target.checked;render();}));
  document.querySelectorAll('#regionToggles input').forEach(el=>el.addEventListener('change',()=>{el.checked?state.regions.add(el.dataset.region):state.regions.delete(el.dataset.region);render();}));
  document.getElementById('clearDistrict').addEventListener('click',()=>{state.selectedDistrict=null;state.selectedFacility=null;render();});
- document.getElementById('download').addEventListener('click',exportVisible);
+ document.getElementById('download').addEventListener('click',exportVisible);document.getElementById('exportPng').addEventListener('click',downloadMapPng);document.getElementById('exportPdf').addEventListener('click',downloadMapPdf);document.getElementById('exportPng').addEventListener('click',downloadMapPng);document.getElementById('exportPdf').addEventListener('click',downloadMapPdf);document.getElementById('exportPng').addEventListener('click',downloadMapPng);document.getElementById('exportPdf').addEventListener('click',downloadMapPdf);
  document.getElementById('zoomIn').addEventListener('click',()=>zoomAt(1.25,W/2,H/2));document.getElementById('zoomOut').addEventListener('click',()=>zoomAt(.8,W/2,H/2));document.getElementById('resetMap').addEventListener('click',resetMap);
  const map=document.getElementById('map');map.addEventListener('wheel',e=>{e.preventDefault();const p=svgPoint(e);zoomAt(e.deltaY<0?1.16:.86,p.x,p.y);},{passive:false});let drag=null;map.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,tx:transform.x,ty:transform.y};map.setPointerCapture(e.pointerId);});map.addEventListener('pointermove',e=>{if(!drag)return;const rect=map.getBoundingClientRect();transform.x=drag.tx+(e.clientX-drag.x)*W/rect.width;transform.y=drag.ty+(e.clientY-drag.y)*H/rect.height;updateMapTransform();});map.addEventListener('pointerup',()=>drag=null);
 }
 function svgPoint(e){const r=document.getElementById('map').getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*W,y:(e.clientY-r.top)/r.height*H};}
 function zoomAt(mult,x,y){const ns=Math.max(.7,Math.min(7,transform.scale*mult));const factor=ns/transform.scale;transform.x=x-(x-transform.x)*factor;transform.y=y-(y-transform.y)*factor;transform.scale=ns;updateMapTransform();}
 function exportVisible(){const rows=activeFacilities();const cols=['Name','District','mapDistrict','region','category','serviceGroup','Type','Address','Contact','Remarks'];const csv=[cols,...rows.map(r=>cols.map(k=>r[k]??''))].map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='punjab-care-access-visible-listings.csv';a.click();URL.revokeObjectURL(a.href);}
-createAtlasFrame();
 createMap();
 const totals={'Government':0,'NGO / Trust':0,'Private':0,'Helpline / Office':0};facilities.forEach(f=>totals[f.category]++);document.getElementById('governmentTotal').textContent=totals['Government'];document.getElementById('ngoTotal').textContent=totals['NGO / Trust'];document.getElementById('privateTotal').textContent=totals['Private'];document.getElementById('helplineTotal').textContent=totals['Helpline / Office'];
 setupControls();render();

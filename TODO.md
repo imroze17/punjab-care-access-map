@@ -6,5 +6,7 @@
 - [x] Keep districts clickable for geographic facility exploration and allow users to export the visible/current facility results as CSV.
 - [x] Provide individually toggleable district boundary, district-label, cultural-region, and river layers. Preserve Majha, Doaba, Malwa, and Puadh as clearly named cultural-region overlays.
 - [x] Show major river overlays with clear, high-contrast labels that name each river directly.
-- [x] Restyle the map around the supplied historic atlas reference: parchment ground, fine double-rule frame, surveyed reference grid using actual degree labels, serif cartography, subdued printed layers, and shape-coded service symbols.
+- [x] Restyle the map around the supplied historic atlas reference: parchment ground, fine double-rule frame, Garamond cartography, subdued printed layers, and shape-coded service symbols.
+- [x] Remove the decorative grid and degree-boundary annotations while retaining the map’s interactive district, cultural-region, and river layers.
+- [x] Add live map exports: PNG and one-page PDF downloads reflect the current filtered listings and visible layer state, and include an export map key.
 - [ ] Publish the validated static build and confirm the durable public website URL.

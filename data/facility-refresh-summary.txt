@@ -1,0 +1,19 @@
+Updated records: 112
+Mapped display anchors: 24
+
+Primary categories:
+- Government: 75
+- Private: 17
+- NGO / Trust: 14
+- Helpline / Office: 6
+
+Service groups:
+- OOAT service: 30
+- District coordination: 19
+- Private provider: 17
+- NGO / Trust: 14
+- DDTC: 12
+- Helpline / information: 6
+- Methadone maintenance: 6
+- Model centre: 5
+- Government service: 3

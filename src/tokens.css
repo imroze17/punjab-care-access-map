@@ -1,0 +1,142 @@
+/* ============================================================================
+   Punjab Care Access Map — design tokens
+   Phase 1 of the UI/UX redesign handoff (v1.0, 27 October 2026).
+
+   Scope: typography scale, colour system, spacing, radii, elevation.
+   This file is concatenated FIRST into app.css, ahead of base/p0/p1 styles,
+   so every later rule can consume these custom properties.
+
+   Provenance note (handoff §9.1): these values are proposed tokens inspired by
+   the supplied reference images. They are NOT sampled source colours and no
+   reference font has been identified. Every text pair shipped here was checked
+   with the WCAG relative-luminance formula; see design/BASELINE_FINDINGS.md
+   and design/CONTRAST_TABLE.md for the measured ratios.
+   ========================================================================== */
+
+:root {
+  /* ---- Typography ------------------------------------------------------
+     Handoff §8.2. Rem-based so browser text resizing is respected.
+     Phase 1 replaces the previous sub-14px fractional-rem sizes; the baseline
+     audit measured 17 of 17 probed text styles below 14px.                */
+  --font-ui: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+             "Segoe UI", sans-serif;
+  /* Gurmukhi companion. Declared for Phase 3 only: no Panjabi interface text
+     is published (publishedLocales == ["en"]) and no font file is shipped yet. */
+  --font-pa: "Noto Sans Gurmukhi", "Nirmala UI", sans-serif;
+
+  --text-xs: 0.875rem;              /* 14px — smallest permitted utility text */
+  --text-sm: 0.9375rem;             /* 15px — secondary detail               */
+  --text-base: 1rem;                /* 16px — body and control labels        */
+  --text-card: 1.125rem;            /* 18px — service name                   */
+  --text-section: 1.375rem;         /* 22px — section titles                 */
+  --text-title: clamp(1.625rem, 1.35rem + 0.65vw, 1.875rem); /* 26–30px      */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-body: 1.5;
+  --leading-heading: 1.25;
+
+  /* ---- Colour: surfaces and text --------------------------------------
+     Handoff §9.1. Cool off-white canvas, white working surfaces.          */
+  --color-page: #f3f4f8;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #ebecf1;
+  --color-text: #202522;            /* 15.57:1 on white                     */
+  --color-text-secondary: #59645f;  /* 6.15:1 white / 5.60:1 page           */
+
+  /* ---- Colour: primary action -----------------------------------------
+     Green is the single primary action accent (§9.2).                     */
+  --color-primary: #246b52;         /* 6.36:1 with white text               */
+  --color-primary-hover: #1b543f;   /* 8.80:1 with white text               */
+  --color-primary-pressed: #164734;
+
+  /* ---- Colour: restrained accents --------------------------------------
+     Grouping and emphasis only. A mint surface never means "verified" and a
+     coral surface never means "closed" (§9.3).                            */
+  --color-mint: #e3f2ec;
+  --color-lavender: #eee9fa;
+  --color-coral-tint: #fbe7e5;
+  --color-cyan-tint: #e7f4f8;
+
+  /* ---- Colour: lines and focus -----------------------------------------
+     --color-divider is decorative only and is never the sole boundary of an
+     actionable control; controls use --color-control-border (4.13:1).     */
+  --color-divider: #dde2e0;
+  --color-control-border: #738078;
+
+  /* APPROVED DEVIATION from handoff §9.1, which proposed a green focus ring.
+     Measured: a green ring on the green primary button is 1.57:1. The retained
+     blue ring measures 9.96:1 on white, 9.06:1 on the page canvas and 8.19:1
+     on its own halo, and the halo is 5.23:1 against the green button face.
+     Owner approved keeping blue on 27 Oct 2026. Do not "correct" this to green
+     without re-measuring every adjacent surface.                          */
+  --color-focus: #073b9b;
+  --color-focus-soft: #dceaff;
+
+  /* ---- Data-encoding colours -------------------------------------------
+     Separate job from action colour (§9.4). These encode source-derived
+     ownership claims and are always paired with a text label, never used as
+     the sole carrier of meaning. Ratios are against their own tint.       */
+  --color-gov: #164b85;        --color-gov-tint: #e5f0fc;        /* 7.65:1 */
+  --color-ngo: #91440c;        --color-ngo-tint: #fff0e3;        /* 6.20:1 */
+  --color-private: #5f258e;    --color-private-tint: #f1e6fb;    /* 8.15:1 */
+  --color-helpline: #0f6570;   --color-helpline-tint: #e1f4f5;   /* 5.92:1 */
+
+  /* Cultural-region wash colours. Editorial wayfinding overlays, not official
+     administrative boundaries (§12.3).                                    */
+  --color-majha: #f1b44c;
+  --color-doaba: #4ea0a8;
+  --color-malwa: #e07a5f;
+  --color-puadh: #8c74b9;
+
+  /* ---- Spacing, radii, elevation ---------------------------------------
+     Handoff §10.2.                                                        */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --radius-workspace: 18px;
+  --radius-pill: 999px;
+
+  --shadow-panel: 0 4px 18px rgb(32 37 34 / 0.04);
+  --shadow-overlay: 0 10px 30px rgb(32 37 34 / 0.12);
+
+  /* ---- Control sizing ---------------------------------------------------
+     44–48px is a design target for comfortable primary controls (§11.1).
+     It is deliberately NOT presented as the WCAG 2.2 AA minimum.          */
+  --control-height: 44px;
+  --control-height-compact: 38px;
+}
+
+/* Legacy aliases. The pre-redesign stylesheets reference these names in many
+   places; mapping them onto tokens lets Phase 1 land the palette without a
+   risky sweeping rename. Phase 2 migrates call sites to the token names. */
+:root {
+  --ink: var(--color-text);
+  --muted: var(--color-text-secondary);
+  --paper: var(--color-page);
+  --card: var(--color-surface);
+  --line: var(--color-divider);
+  --green: var(--color-primary);
+  --green-soft: var(--color-mint);
+  --gov: var(--color-gov);
+  --ngo: var(--color-ngo);
+  --private: var(--color-private);
+  --helpline: var(--color-helpline);
+  --majha: var(--color-majha);
+  --doaba: var(--color-doaba);
+  --malwa: var(--color-malwa);
+  --puadh: var(--color-puadh);
+  --shadow: var(--shadow-panel);
+  --focus: var(--color-focus);
+  --focus-soft: var(--color-focus-soft);
+}

@@ -22,6 +22,7 @@ DEFAULT_TEMPLATE = ROOT / "src/template.html"
 DEFAULT_BASE_RUNTIME = ROOT / "src/base-runtime.js"
 DEFAULT_P0_HELPERS = ROOT / "src/p0-helpers.js"
 DEFAULT_P1_RUNTIME = ROOT / "src/p1-runtime.js"
+DEFAULT_TOKENS_STYLE = ROOT / "src/tokens.css"
 DEFAULT_BASE_STYLE = ROOT / "src/base-style.css"
 DEFAULT_P0_STYLE = ROOT / "src/p0-style.css"
 DEFAULT_P1_STYLE = ROOT / "src/p1-style.css"
@@ -268,6 +269,7 @@ def main() -> None:
     parser.add_argument("--base-runtime", default=DEFAULT_BASE_RUNTIME, type=Path)
     parser.add_argument("--p0-helpers", default=DEFAULT_P0_HELPERS, type=Path)
     parser.add_argument("--p1-runtime", default=DEFAULT_P1_RUNTIME, type=Path)
+    parser.add_argument("--tokens-style", default=DEFAULT_TOKENS_STYLE, type=Path)
     parser.add_argument("--base-style", default=DEFAULT_BASE_STYLE, type=Path)
     parser.add_argument("--p0-style", default=DEFAULT_P0_STYLE, type=Path)
     parser.add_argument("--p1-style", default=DEFAULT_P1_STYLE, type=Path)
@@ -326,7 +328,7 @@ def main() -> None:
         "districtCount": str(len(aliases.get("districts", []))),
     })
 
-    css = "\n\n".join(path.read_text(encoding="utf-8").strip() for path in (args.base_style, args.p0_style, args.p1_style)) + "\n"
+    css = "\n\n".join(path.read_text(encoding="utf-8").strip() for path in (args.tokens_style, args.base_style, args.p0_style, args.p1_style)) + "\n"
     application_runtime = "\n\n".join(path.read_text(encoding="utf-8").strip() for path in (args.p0_helpers, args.p1_runtime)) + "\n"
     app_js = args.base_runtime.read_text(encoding="utf-8")
     app_js = replace_once(app_js, "__P1_RUNTIME_JS__", application_runtime, "base runtime")

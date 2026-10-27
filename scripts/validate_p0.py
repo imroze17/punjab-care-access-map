@@ -30,6 +30,78 @@ def check_javascript(node: str, path: Path) -> None:
         raise RuntimeError(f"JavaScript syntax check failed for {path.name}:\n{result.stderr}")
 
 
+# Smallest interface text the redesign permits, in rem at a 16px root (handoff §8.3).
+MIN_UI_TEXT_REM = 0.875
+
+# Tokens whose values were contrast-checked in design/CONTRAST_TABLE.md. Changing a
+# value here without re-measuring re-opens the UX-07 defect, so the validator pins them.
+PINNED_TOKENS = {
+    "--color-text": "#202522",
+    "--color-text-secondary": "#59645f",
+    "--color-primary": "#246b52",
+    "--color-page": "#f3f4f8",
+    "--color-surface": "#ffffff",
+    "--color-control-border": "#738078",
+    "--color-focus": "#073b9b",
+    "--text-xs": "0.875rem",
+    "--text-sm": "0.9375rem",
+    "--text-base": "1rem",
+    "--text-card": "1.125rem",
+}
+
+
+def check_phase1_visual_tokens(app_css: str) -> None:
+    """Phase 1 redesign guards: token layer present, no sub-14px interface text.
+
+    The pre-redesign build rendered 17 of 17 probed interface text styles below
+    14px and failed WCAG AA on five muted-grey pairs. These assertions stop both
+    from silently returning.
+    """
+    # 1. The token layer must be concatenated first so later rules can consume it.
+    if ":root {" not in app_css:
+        raise AssertionError("design token :root block missing from generated app.css")
+    token_block_end = app_css.index("}", app_css.index(":root {"))
+    if token_block_end > app_css.index("html, body"):
+        raise AssertionError("src/tokens.css must be concatenated ahead of base-style.css")
+
+    # 2. Contrast-checked token values must not drift.
+    for token, expected in PINNED_TOKENS.items():
+        match = re.search(rf"{re.escape(token)}:\s*([^;]+);", app_css)
+        if not match:
+            raise AssertionError(f"required design token {token} missing from app.css")
+        actual = match.group(1).strip().lower()
+        if actual != expected:
+            raise AssertionError(
+                f"token {token} is {actual!r}, expected {expected!r}. "
+                "Re-measure contrast and update design/CONTRAST_TABLE.md before changing this."
+            )
+
+    # 3. No interface text below 14px. rem-based sizes are interface text; the few
+    #    remaining px sizes are SVG map glyphs (district labels/counts), which are
+    #    graphical encodings sized in user units, not document text.
+    offenders = sorted(
+        {
+            value
+            for value in re.findall(r"font-size:\s*([0-9.]+)rem", app_css)
+            if float(value) < MIN_UI_TEXT_REM
+        },
+        key=float,
+    )
+    if offenders:
+        raise AssertionError(
+            "interface text below the "
+            f"{MIN_UI_TEXT_REM}rem ({MIN_UI_TEXT_REM * 16:.0f}px) floor: "
+            + ", ".join(f"{value}rem" for value in offenders)
+        )
+
+    # 4. Translucent legend/map-note panels made the measured ratio depend on map
+    #    content (handoff §9.5); both must now sit on an opaque surface.
+    for selector in (".map-note {", ".legend {"):
+        block = app_css[app_css.index(selector) : app_css.index("}", app_css.index(selector))]
+        if "rgba(255,255,255" in block.replace(" ", "") or "0.92" in block:
+            raise AssertionError(f"{selector.strip(' {')} must use an opaque background surface")
+
+
 def main() -> None:
     canonical = read_json(ROOT / "data/canonical/punjab-care-records.v1.json")
     crosswalk = read_json(ROOT / "data/migrations/legacy-id-crosswalk.v1.json")
@@ -121,6 +193,8 @@ def main() -> None:
     assert "selectionNoLongerMatches" in app_js and "p1CurrentSelectionIsVisible(p1ActiveFacilities())" in app_js
     assert "@media print" in app_css and "prefers-reduced-motion" in app_css and ".skip-link" in app_css and ".print-context" in app_css
 
+    check_phase1_visual_tokens(app_css)
+
     assert docs_html == public_html.replace('href="/logo.svg"', 'href="logo.svg"', 1)
     for name in ("app.css", "app.js", "runtime-data.js", "logo.svg", "manus-routes.json"):
         assert (public_dir / name).read_bytes() == (docs_dir / name).read_bytes(), f"Pages asset drift: {name}"
@@ -155,6 +229,7 @@ def main() -> None:
     assert PROHIBITED_TERM not in project_text.lower()
     active_sources = [
         ROOT / "Makefile", ROOT / "src/template.html", ROOT / "src/base-runtime.js", ROOT / "src/base-style.css",
+        ROOT / "src/tokens.css",
         ROOT / "src/p0-helpers.js", ROOT / "src/p1-runtime.js", ROOT / "src/p1-style.css",
         ROOT / "scripts/build_p0.py", ROOT / "scripts/sync_github_pages.py", ROOT / "scripts/import_legacy_source.py", ROOT / "scripts/validate_p0.py",
     ]
